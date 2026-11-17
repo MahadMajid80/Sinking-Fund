@@ -2988,8 +2988,12 @@ html[data-scrolled] .site-header__inner {
 .mega-tile--dark .mega-tile__arrow {
   color: rgba(255, 255, 255, 0.72);
 }
+/* Keep the text white on hover: the global a:hover colour (ink) would otherwise hide the
+   title on the dark background. */
 .mega-tile--dark:hover,
 .mega-tile--dark:focus-visible {
+  color: var(--white);
+  background: #3a3a3a;
   box-shadow: 0 14px 30px -14px rgba(39, 39, 39, 0.55);
 }
 .mega-tile--dark:hover .mega-tile__arrow,

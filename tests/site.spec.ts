@@ -313,6 +313,17 @@ test.describe("menu panels", () => {
     expect(results.violations.map((v) => v.id)).toEqual([]);
   });
 
+  test("the dark action tiles keep white text on hover", async ({ page }) => {
+    await page.goto("/about-us/");
+    for (const id of ["services", "faq"]) {
+      await page.locator(`button[aria-controls="nav-${id}"]`).click();
+      const tile = page.locator(`#nav-${id} .mega-tile--dark`);
+      await tile.hover();
+      await expect(tile.locator(".mega-tile__title")).toHaveCSS("color", "rgb(255, 255, 255)");
+      await page.keyboard.press("Escape");
+    }
+  });
+
   test("hover opens a menu, moving to the other menu switches, and leaving closes it", async ({ page }) => {
     await page.goto("/about-us/");
     await page.getByRole("button", { name: "Services" }).hover();
