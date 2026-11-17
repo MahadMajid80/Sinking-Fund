@@ -4,90 +4,79 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
-import type { MegaData } from "@/lib/mega";
+import type { MegaData, MegaTile } from "@/lib/mega";
 import { isGroup, primaryNav, type NavGroup } from "@/lib/nav";
 import { BRAND, routes } from "@/lib/site";
 
 type Close = (focusButton?: boolean) => void;
 
-function MegaArrow() {
+function TileArrow() {
   return (
-    <svg className="mega__arrow" width="16" height="16" viewBox="0 0 18 18" aria-hidden="true" focusable="false">
+    <svg className="mega-tile__arrow" width="16" height="16" viewBox="0 0 18 18" aria-hidden="true" focusable="false">
       <path d="M3 9h11M10 4.5 14.5 9 10 13.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 
+/** A row of tiles: one per service (dot in the service's diamond colour) and a dark action tile. */
+function TilePanel({
+  tiles,
+  pathname,
+  onNavigate,
+  action,
+}: {
+  tiles: MegaTile[];
+  pathname: string;
+  onNavigate: () => void;
+  action: { href: string; title: string; text: string };
+}) {
+  return (
+    <ul className="mega__row">
+      {tiles.map((t) => (
+        <li key={t.href}>
+          <Link href={t.href} className="mega-tile" data-quadrant={t.quadrant} aria-current={t.href === pathname ? "page" : undefined} onClick={onNavigate}>
+            <span className="mega-tile__top">
+              <span className="mega-tile__dot" aria-hidden="true" />
+              <TileArrow />
+            </span>
+            <span className="mega-tile__title">{t.title}</span>
+            <span className="mega-tile__text">{t.text}</span>
+          </Link>
+        </li>
+      ))}
+      <li>
+        <Link href={action.href} className="mega-tile mega-tile--dark" aria-current={action.href === pathname ? "page" : undefined} onClick={onNavigate}>
+          <span className="mega-tile__top">
+            <Image src="/images/marks/brand.png" alt="" width={22} height={25} className="mega-tile__mark" />
+            <TileArrow />
+          </span>
+          <span className="mega-tile__title">{action.title}</span>
+          <span className="mega-tile__text">{action.text}</span>
+        </Link>
+      </li>
+    </ul>
+  );
+}
+
 function ServicesPanel({ data, pathname, onNavigate }: { data: MegaData; pathname: string; onNavigate: () => void }) {
   return (
-    <div className="mega__grid">
-      <ul className="mega__cards">
-        {data.services.map((s) => (
-          <li key={s.href}>
-            <Link href={s.href} className="mega-card" aria-current={s.href === pathname ? "page" : undefined} onClick={onNavigate}>
-              <Image src={s.mark} alt="" width={44} height={52} className="mega-card__mark" />
-              <span className="mega-card__body">
-                <span className="mega-card__title">
-                  {s.title}
-                  <MegaArrow />
-                </span>
-                <span className="mega-card__text">{s.summary}</span>
-              </span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <div className="mega__aside">
-        <p className="mega__aside-title">Not sure which report you need?</p>
-        <p className="mega__aside-text">Tell us about the property and we’ll recommend the right service.</p>
-        <Link href={routes.quote.path} className="button button--primary button--small" onClick={onNavigate}>
-          Request a Quote
-        </Link>
-        <a href={BRAND.phoneHref} className="mega__phone">
-          Call {BRAND.phoneDisplay}
-        </a>
-      </div>
-    </div>
+    <TilePanel
+      tiles={data.services}
+      pathname={pathname}
+      onNavigate={onNavigate}
+      action={{ href: routes.quote.path, title: "Request a quote", text: "Tell us about the property and the reports you need." }}
+    />
   );
 }
 
 function FaqPanel({ data, pathname, onNavigate }: { data: MegaData; pathname: string; onNavigate: () => void }) {
   return (
-    <div className="mega__grid">
-      <ul className="mega__topics">
-        {data.faq.map((t) => (
-          <li key={t.href} className="mega-topic">
-            <Link href={t.href} className="mega-topic__head" aria-current={t.href === pathname ? "page" : undefined} onClick={onNavigate}>
-              <Image src={t.mark} alt="" width={34} height={40} className="mega-topic__mark" />
-              <span className="mega-topic__title">{t.title}</span>
-            </Link>
-            <ul className="mega-topic__questions">
-              {t.questions.map((q) => (
-                <li key={q.href}>
-                  <Link href={q.href} onClick={onNavigate}>
-                    {q.question}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <Link href={t.href} className="mega-topic__all" onClick={onNavigate}>
-              See all {t.count} questions<span className="visually-hidden"> on {t.title}</span>
-              <MegaArrow />
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <div className="mega__aside">
-        <p className="mega__aside-title">Still have a question?</p>
-        <p className="mega__aside-text">Our valuers are happy to help with anything the FAQs don’t cover.</p>
-        <Link href={routes.contact.path} className="button button--quiet button--small" onClick={onNavigate}>
-          Contact us
-        </Link>
-        <a href={BRAND.phoneHref} className="mega__phone">
-          Call {BRAND.phoneDisplay}
-        </a>
-      </div>
-    </div>
+    <TilePanel
+      tiles={data.faq}
+      pathname={pathname}
+      onNavigate={onNavigate}
+      action={{ href: routes.contact.path, title: "Ask us a question", text: `Send a message or call ${BRAND.phoneDisplay.replace(/ /g, "\u00a0")}.` }}
+    />
   );
 }
 
@@ -206,7 +195,15 @@ export function DesktopNav({ mega }: { mega: MegaData }) {
       <ul className="nav__list">
         {primaryNav.map((item) =>
           isGroup(item) ? (
-            <MegaDisclosure key={item.id} group={item} pathname={pathname} open={openId === item.id} onOpen={() => setOpenId(item.id)} onClose={close}>
+            <MegaDisclosure
+              key={item.id}
+              group={item}
+              pathname={pathname}
+              open={openId === item.id}
+              onOpen={() => setOpenId(item.id)}
+              // Close only this menu: a delayed close must not shut a menu that has just opened.
+              onClose={() => setOpenId((id) => (id === item.id ? null : id))}
+            >
               {item.id === "services" ? <ServicesPanel data={mega} pathname={pathname} onNavigate={close} /> : <FaqPanel data={mega} pathname={pathname} onNavigate={close} />}
             </MegaDisclosure>
           ) : (

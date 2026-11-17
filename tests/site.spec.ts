@@ -84,7 +84,7 @@ test.describe("navigation", () => {
     // FAQ menu
     const faq = page.getByRole("button", { name: "FAQ" });
     await faq.click();
-    await page.locator("#nav-faq").getByRole("link", { name: "Asbestos Reports", exact: true }).click();
+    await page.locator(`#nav-faq a[href="/asbestos-reports/"]`).click();
     await expect(page).toHaveURL("/asbestos-reports/");
     await expect(page.getByRole("button", { name: "FAQ" })).toHaveAttribute("aria-expanded", "false");
   });
@@ -295,38 +295,32 @@ test.describe("navigation scroll position", () => {
   });
 });
 
-test.describe("mega menus", () => {
+test.describe("menu panels", () => {
   test.use({ viewport: { width: 1440, height: 900 } });
 
-  test("Services and FAQ open as mega menus with every service and topic", async ({ page }) => {
+  test("Services and FAQ open as a row of tiles, with an action tile", async ({ page }) => {
     await page.goto("/");
     await page.getByRole("button", { name: "Services" }).click();
     const services = page.locator("#nav-services");
-    await expect(services.locator(".mega-card")).toHaveCount(4);
-    await expect(services.getByRole("link", { name: "Request a Quote" })).toHaveAttribute("href", "/quote-request/");
+    await expect(services.locator(".mega-tile")).toHaveCount(5);
+    await expect(services.locator(".mega-tile--dark")).toHaveAttribute("href", "/quote-request/");
     await page.getByRole("button", { name: "FAQ" }).click();
     await expect(services).toBeHidden();
     const faq = page.locator("#nav-faq");
-    await expect(faq.locator(".mega-topic")).toHaveCount(4);
-    await expect(faq.locator(".mega-topic__questions a")).toHaveCount(12);
+    await expect(faq.locator(".mega-tile")).toHaveCount(5);
+    await expect(faq.locator(".mega-tile--dark")).toHaveAttribute("href", "/contact-us/");
     const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"]).analyze();
     expect(results.violations.map((v) => v.id)).toEqual([]);
   });
 
-  test("hover opens a menu and leaving closes it", async ({ page }) => {
+  test("hover opens a menu, moving to the other menu switches, and leaving closes it", async ({ page }) => {
     await page.goto("/about-us/");
     await page.getByRole("button", { name: "Services" }).hover();
     await expect(page.locator("#nav-services")).toBeVisible();
-    await page.mouse.move(700, 880);
+    await page.getByRole("button", { name: "FAQ" }).hover();
+    await expect(page.locator("#nav-faq")).toBeVisible();
     await expect(page.locator("#nav-services")).toBeHidden();
-  });
-
-  test("a question link opens that answer on the FAQ page", async ({ page }) => {
-    await page.goto("/");
-    await page.getByRole("button", { name: "FAQ" }).click();
-    await page.locator('#nav-faq a[href="/asbestos-reports/#do-the-owners-need-one"]').click();
-    await expect(page).toHaveURL("/asbestos-reports/#do-the-owners-need-one");
-    await expect(page.locator("#do-the-owners-need-one")).toHaveAttribute("open", "");
+    await page.mouse.move(700, 880);
     await expect(page.locator("#nav-faq")).toBeHidden();
   });
 });

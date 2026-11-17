@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { FaqHashOpener } from "./FaqHashOpener";
 import { PageHeader, QuoteBand } from "./PageParts";
 import { faqPages } from "@/content/faqs";
 import { services } from "@/content/services";
@@ -18,7 +17,6 @@ export function FaqTemplate({ service }: { service: ServiceKey }) {
 
   return (
     <>
-      <FaqHashOpener />
       <PageHeader trail={["home", faqKey]} title={page.title} intro={<p>{page.intro}</p>} mark={s.mark} photo="brick">
         <div className="page-header__actions">
           <Link href={routes[service].path} className="text-link">

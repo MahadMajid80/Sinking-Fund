@@ -1,52 +1,64 @@
 import "server-only";
 import { faqPages } from "@/content/faqs";
 import { services } from "@/content/services";
-import { routes, serviceFaq, serviceKeys } from "./site";
+import { routes, serviceFaq, serviceKeys, type ServiceKey } from "./site";
 
 /**
- * Plain data for the desktop mega menus, built on the server from the page content so the
- * menus always match the pages (and the long page content never ships to the browser).
+ * Plain data for the desktop menu panels, built on the server from the page content so the
+ * menus stay in step with the pages (and the long page content never ships to the browser).
  */
-export interface MegaService {
+export interface MegaTile {
   href: string;
   title: string;
-  summary: string;
-  mark: string;
-}
-export interface MegaFaqTopic {
-  href: string;
-  title: string;
-  count: number;
-  mark: string;
-  questions: { href: string; question: string }[];
+  text: string;
+  /** Diamond quadrant colour of the service (the dot on the tile). */
+  quadrant: "top" | "left" | "right" | "bottom";
 }
 export interface MegaData {
-  services: MegaService[];
-  faq: MegaFaqTopic[];
+  services: MegaTile[];
+  faq: MegaTile[];
 }
 
-/** Menu labels match the existing navigation. */
-const serviceLabels = { biv: "Building Insurance Valuation", sfp: "Capital Works or Sinking Fund Plan", whs: "Work Health and Safety", asb: "Asbestos Report" } as const;
-const faqLabels = { biv: "Building Insurance Valuation", sfp: "Capital Works or Sinking Fund Plans", whs: "Work Health and Safety", asb: "Asbestos Reports" } as const;
+/** Menu titles match the navigation labels. */
+const serviceTitles: Record<ServiceKey, string> = {
+  biv: "Building Insurance Valuation",
+  sfp: "Capital Works or Sinking Fund Plan",
+  whs: "Work Health and Safety",
+  asb: "Asbestos Report",
+};
+/** One-line descriptions, condensed from each service's own summary. */
+const serviceLines: Record<ServiceKey, string> = {
+  biv: "Certificates of Value for the replacement and reinstatement cost of your buildings.",
+  sfp: "10 and 15 year plans compliant with s80 of the Strata Schemes Management Act.",
+  whs: "Safety reports covering both a Duty of Care and WHS legislative requirements.",
+  asb: "An Asbestos Register and an Asbestos Management Plan in one report.",
+};
+const faqTitles: Record<ServiceKey, string> = {
+  biv: "Building Insurance Valuation FAQs",
+  sfp: "Capital Works or Sinking Fund Plan FAQs",
+  whs: "Work Health and Safety FAQs",
+  asb: "Asbestos Report FAQs",
+};
+const faqTopics: Record<ServiceKey, string> = {
+  biv: "building insurance valuations",
+  sfp: "capital works and sinking fund plans",
+  whs: "work health and safety reports",
+  asb: "asbestos reports",
+};
 
 export function megaData(): MegaData {
   return {
     services: serviceKeys.map((key) => ({
       href: routes[key].path,
-      title: serviceLabels[key],
-      summary: services[key].summary,
-      mark: services[key].mark,
+      title: serviceTitles[key],
+      text: serviceLines[key],
+      quadrant: services[key].quadrant,
     })),
-    faq: serviceKeys.map((key) => {
-      const href = routes[serviceFaq[key]].path;
-      const page = faqPages[key];
-      return {
-        href,
-        title: faqLabels[key],
-        count: page.faqs.length,
-        mark: services[key].mark,
-        questions: page.faqs.slice(0, 3).map((f) => ({ href: `${href}#${f.id}`, question: f.question })),
-      };
-    }),
+    faq: serviceKeys.map((key) => ({
+      href: routes[serviceFaq[key]].path,
+      title: faqTitles[key],
+      text: `${faqPages[key].faqs.length} questions owners ask about ${faqTopics[key]}.`,
+      quadrant: services[key].quadrant,
+    })),
   };
 }
