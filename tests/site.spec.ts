@@ -261,3 +261,36 @@ test.describe("axe accessibility scan (WCAG 2.2 A/AA)", () => {
     expect(results.violations.map((v) => v.id)).toEqual([]);
   });
 });
+
+test.describe("navigation scroll position", () => {
+  test("pages opened from the menu start at the top, and Back returns to the previous place", async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto("/about-us/");
+    for (const href of ["/testimonials/", "/contact-us/", "/about-us/"]) {
+      await page.evaluate(() => window.scrollTo(0, 700));
+      await page.locator(`nav.nav a[href="${href}"]`).click();
+      await expect(page).toHaveURL(href);
+      await expect.poll(() => page.evaluate(() => Math.round(window.scrollY))).toBe(0);
+    }
+    await page.evaluate(() => window.scrollTo(0, 600));
+    await page.waitForTimeout(200);
+    // A script click, so the browser doesn't scroll the link into view first.
+    await page.evaluate(() => (document.querySelector('nav.nav a[href="/testimonials/"]') as HTMLElement).click());
+    await expect(page).toHaveURL("/testimonials/");
+    await page.goBack();
+    await expect(page).toHaveURL("/about-us/");
+    await expect.poll(() => page.evaluate(() => Math.round(window.scrollY))).toBe(600);
+  });
+
+  test("section links clear the floating header", async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto("/services/biv/");
+    await page.locator(".toc a").nth(3).click();
+    await page.waitForTimeout(1000);
+    const gap = await page.evaluate(() => {
+      const target = document.querySelector(decodeURIComponent(location.hash))!.getBoundingClientRect().top;
+      return target - document.querySelector(".site-header__inner")!.getBoundingClientRect().bottom;
+    });
+    expect(gap).toBeGreaterThan(0);
+  });
+});

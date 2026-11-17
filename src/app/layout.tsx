@@ -60,7 +60,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-AU" className={`${montserrat.variable} ${montserratAccent.variable} ${lato.variable} ${latoItalic.variable}`}>
+    <html lang="en-AU" data-scroll-behavior="smooth" className={`${montserrat.variable} ${montserratAccent.variable} ${lato.variable} ${latoItalic.variable}`}>
       <body>
         <a href="#main" className="skip-link">
           Skip to main content

@@ -59,7 +59,13 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  scroll-padding-top: calc(var(--header-space, 5rem) + 0.5rem);
+}
+/* Smooth scrolling only for jumps the visitor starts on the page (section links, error
+   summaries), which leave focus inside the document. Back/Forward restores and page loads
+   happen without focus inside, so they jump straight to the right place instead of an
+   animation that can stop partway. Next.js also turns it off during route changes
+   (data-scroll-behavior="smooth" on <html>). */
+html:focus-within {
   scroll-behavior: smooth;
 }
 body {
@@ -334,8 +340,13 @@ a.wordmark:hover .wordmark__mark {
   --header-gap: clamp(0.5rem, 0.3rem + 0.8vw, 1rem);
   --header-space: calc(var(--header-h) + var(--header-gap) * 2);
 }
-html {
-  scroll-padding-top: calc(var(--header-space) + 0.5rem);
+/* Clearance under the floating header for anything the page scrolls to: section links
+   (#ids), focused fields and links, and the forms. This is set on the targets, not as
+   scroll-padding on <html>: Next.js treats a page whose top sits inside the scroll padding as
+   "not in view" and scrolls it down after every navigation, and every page here starts
+   under the floating header. */
+:where([id], a, button, input, select, textarea, summary, [tabindex], form) {
+  scroll-margin-top: calc(var(--header-space) + 0.5rem);
 }
 .site-header {
   position: sticky;
