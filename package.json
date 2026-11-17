@@ -1,0 +1,42 @@
+{
+  "name": "sinking-fund",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sinking Fund (BIV Reports Pty Limited) - Next.js rebuild of the WordPress site",
+  "engines": {
+    "node": ">=20.9"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "next typegen && tsc --noEmit",
+    "assets": "node scripts/optimise-assets.mjs",
+    "crawl": "node scripts/crawl.mjs",
+    "test:e2e": "playwright test",
+    "check": "npm run typecheck && npm run lint && npm run build"
+  },
+  "dependencies": {
+    "next": "16.4.6",
+    "nodemailer": "10.6.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "server-only": "0.0.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@fontsource/lato": "5.3.0",
+    "@fontsource/montserrat": "5.3.0",
+    "@playwright/test": "1.65.1",
+    "@types/node": "26.6.6",
+    "@types/nodemailer": "8.0.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.4.6",
+    "node-html-parser": "9.0.7",
+    "sharp": "0.35.5",
+    "typescript": "6.0.3"
+  }
+}

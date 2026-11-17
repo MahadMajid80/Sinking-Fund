@@ -1,0 +1,1993 @@
+{
+  "base": "http://localhost:3100",
+  "origin": "http://localhost:3000",
+  "indexable": false,
+  "results": [
+    {
+      "scope": "/",
+      "name": "status 200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "/",
+      "name": "X-Robots-Tag",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/",
+      "name": "title matches inventory",
+      "ok": true,
+      "detail": "Property Compliance & Valuations | Sinking Fund"
+    },
+    {
+      "scope": "/",
+      "name": "meta description",
+      "ok": true,
+      "detail": "155 chars"
+    },
+    {
+      "scope": "/",
+      "name": "exactly one H1",
+      "ok": true,
+      "detail": "Welcome to Sinking Fund"
+    },
+    {
+      "scope": "/",
+      "name": "heading levels not skipped",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/",
+      "name": "absolute self-referencing canonical",
+      "ok": true,
+      "detail": "http://localhost:3000/"
+    },
+    {
+      "scope": "/",
+      "name": "robots meta",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/",
+      "name": "html lang en-AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/",
+      "name": "og:title/description/url",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/",
+      "name": "og:image absolute",
+      "ok": true,
+      "detail": "http://localhost:3000/images/og-sinking-fund.jpg"
+    },
+    {
+      "scope": "/",
+      "name": "og:locale en_AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/",
+      "name": "twitter:card",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/",
+      "name": "JSON-LD parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/",
+      "name": "Organization JSON-LD",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/",
+      "name": "no FAQPage/Review/AggregateRating schema",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/",
+      "name": "phone link tel:+61291149800",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/about-us/",
+      "name": "status 200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "/about-us/",
+      "name": "X-Robots-Tag",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/about-us/",
+      "name": "title matches inventory",
+      "ok": true,
+      "detail": "About Sinking Fund | BIV Reports Pty Limited"
+    },
+    {
+      "scope": "/about-us/",
+      "name": "meta description",
+      "ok": true,
+      "detail": "137 chars"
+    },
+    {
+      "scope": "/about-us/",
+      "name": "exactly one H1",
+      "ok": true,
+      "detail": "About us"
+    },
+    {
+      "scope": "/about-us/",
+      "name": "heading levels not skipped",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/about-us/",
+      "name": "absolute self-referencing canonical",
+      "ok": true,
+      "detail": "http://localhost:3000/about-us/"
+    },
+    {
+      "scope": "/about-us/",
+      "name": "robots meta",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/about-us/",
+      "name": "html lang en-AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/about-us/",
+      "name": "og:title/description/url",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/about-us/",
+      "name": "og:image absolute",
+      "ok": true,
+      "detail": "http://localhost:3000/images/og-sinking-fund.jpg"
+    },
+    {
+      "scope": "/about-us/",
+      "name": "og:locale en_AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/about-us/",
+      "name": "twitter:card",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/about-us/",
+      "name": "JSON-LD parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/about-us/",
+      "name": "Organization JSON-LD",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/about-us/",
+      "name": "BreadcrumbList ends at this page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/about-us/",
+      "name": "no FAQPage/Review/AggregateRating schema",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/about-us/",
+      "name": "phone link tel:+61291149800",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/biv/",
+      "name": "status 200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "/services/biv/",
+      "name": "X-Robots-Tag",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/services/biv/",
+      "name": "title matches inventory",
+      "ok": true,
+      "detail": "Building Insurance Valuation Services | Sinking Fund"
+    },
+    {
+      "scope": "/services/biv/",
+      "name": "meta description",
+      "ok": true,
+      "detail": "162 chars"
+    },
+    {
+      "scope": "/services/biv/",
+      "name": "exactly one H1",
+      "ok": true,
+      "detail": "Building Insurance Valuation"
+    },
+    {
+      "scope": "/services/biv/",
+      "name": "heading levels not skipped",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/biv/",
+      "name": "absolute self-referencing canonical",
+      "ok": true,
+      "detail": "http://localhost:3000/services/biv/"
+    },
+    {
+      "scope": "/services/biv/",
+      "name": "robots meta",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/services/biv/",
+      "name": "html lang en-AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/biv/",
+      "name": "og:title/description/url",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/biv/",
+      "name": "og:image absolute",
+      "ok": true,
+      "detail": "http://localhost:3000/images/og-sinking-fund.jpg"
+    },
+    {
+      "scope": "/services/biv/",
+      "name": "og:locale en_AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/biv/",
+      "name": "twitter:card",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/biv/",
+      "name": "JSON-LD parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/biv/",
+      "name": "Organization JSON-LD",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/biv/",
+      "name": "BreadcrumbList ends at this page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/biv/",
+      "name": "Service JSON-LD",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/biv/",
+      "name": "no FAQPage/Review/AggregateRating schema",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/biv/",
+      "name": "phone link tel:+61291149800",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/sfp/",
+      "name": "status 200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "/services/sfp/",
+      "name": "X-Robots-Tag",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/services/sfp/",
+      "name": "title matches inventory",
+      "ok": true,
+      "detail": "Capital Works & Sinking Fund Plans | Sinking Fund"
+    },
+    {
+      "scope": "/services/sfp/",
+      "name": "meta description",
+      "ok": true,
+      "detail": "149 chars"
+    },
+    {
+      "scope": "/services/sfp/",
+      "name": "exactly one H1",
+      "ok": true,
+      "detail": "Capital Works or Sinking Fund Plan"
+    },
+    {
+      "scope": "/services/sfp/",
+      "name": "heading levels not skipped",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/sfp/",
+      "name": "absolute self-referencing canonical",
+      "ok": true,
+      "detail": "http://localhost:3000/services/sfp/"
+    },
+    {
+      "scope": "/services/sfp/",
+      "name": "robots meta",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/services/sfp/",
+      "name": "html lang en-AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/sfp/",
+      "name": "og:title/description/url",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/sfp/",
+      "name": "og:image absolute",
+      "ok": true,
+      "detail": "http://localhost:3000/images/og-sinking-fund.jpg"
+    },
+    {
+      "scope": "/services/sfp/",
+      "name": "og:locale en_AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/sfp/",
+      "name": "twitter:card",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/sfp/",
+      "name": "JSON-LD parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/sfp/",
+      "name": "Organization JSON-LD",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/sfp/",
+      "name": "BreadcrumbList ends at this page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/sfp/",
+      "name": "Service JSON-LD",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/sfp/",
+      "name": "no FAQPage/Review/AggregateRating schema",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/sfp/",
+      "name": "phone link tel:+61291149800",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/whs/",
+      "name": "status 200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "/services/whs/",
+      "name": "X-Robots-Tag",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/services/whs/",
+      "name": "title matches inventory",
+      "ok": true,
+      "detail": "Work Health & Safety Reports | Sinking Fund"
+    },
+    {
+      "scope": "/services/whs/",
+      "name": "meta description",
+      "ok": true,
+      "detail": "154 chars"
+    },
+    {
+      "scope": "/services/whs/",
+      "name": "exactly one H1",
+      "ok": true,
+      "detail": "Work Health and Safety"
+    },
+    {
+      "scope": "/services/whs/",
+      "name": "heading levels not skipped",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/whs/",
+      "name": "absolute self-referencing canonical",
+      "ok": true,
+      "detail": "http://localhost:3000/services/whs/"
+    },
+    {
+      "scope": "/services/whs/",
+      "name": "robots meta",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/services/whs/",
+      "name": "html lang en-AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/whs/",
+      "name": "og:title/description/url",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/whs/",
+      "name": "og:image absolute",
+      "ok": true,
+      "detail": "http://localhost:3000/images/og-sinking-fund.jpg"
+    },
+    {
+      "scope": "/services/whs/",
+      "name": "og:locale en_AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/whs/",
+      "name": "twitter:card",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/whs/",
+      "name": "JSON-LD parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/whs/",
+      "name": "Organization JSON-LD",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/whs/",
+      "name": "BreadcrumbList ends at this page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/whs/",
+      "name": "Service JSON-LD",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/whs/",
+      "name": "no FAQPage/Review/AggregateRating schema",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/whs/",
+      "name": "phone link tel:+61291149800",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/asb/",
+      "name": "status 200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "/services/asb/",
+      "name": "X-Robots-Tag",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/services/asb/",
+      "name": "title matches inventory",
+      "ok": true,
+      "detail": "Asbestos Register & Management Plan Reports | Sinking Fund"
+    },
+    {
+      "scope": "/services/asb/",
+      "name": "meta description",
+      "ok": true,
+      "detail": "152 chars"
+    },
+    {
+      "scope": "/services/asb/",
+      "name": "exactly one H1",
+      "ok": true,
+      "detail": "Asbestos Report"
+    },
+    {
+      "scope": "/services/asb/",
+      "name": "heading levels not skipped",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/asb/",
+      "name": "absolute self-referencing canonical",
+      "ok": true,
+      "detail": "http://localhost:3000/services/asb/"
+    },
+    {
+      "scope": "/services/asb/",
+      "name": "robots meta",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/services/asb/",
+      "name": "html lang en-AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/asb/",
+      "name": "og:title/description/url",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/asb/",
+      "name": "og:image absolute",
+      "ok": true,
+      "detail": "http://localhost:3000/images/og-sinking-fund.jpg"
+    },
+    {
+      "scope": "/services/asb/",
+      "name": "og:locale en_AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/asb/",
+      "name": "twitter:card",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/asb/",
+      "name": "JSON-LD parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/asb/",
+      "name": "Organization JSON-LD",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/asb/",
+      "name": "BreadcrumbList ends at this page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/asb/",
+      "name": "Service JSON-LD",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/asb/",
+      "name": "no FAQPage/Review/AggregateRating schema",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/services/asb/",
+      "name": "phone link tel:+61291149800",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/building-insurance-valuation/",
+      "name": "status 200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "/building-insurance-valuation/",
+      "name": "X-Robots-Tag",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/building-insurance-valuation/",
+      "name": "title matches inventory",
+      "ok": true,
+      "detail": "Building Insurance Valuation FAQs | Sinking Fund"
+    },
+    {
+      "scope": "/building-insurance-valuation/",
+      "name": "meta description",
+      "ok": true,
+      "detail": "144 chars"
+    },
+    {
+      "scope": "/building-insurance-valuation/",
+      "name": "exactly one H1",
+      "ok": true,
+      "detail": "Building Insurance Valuation FAQs"
+    },
+    {
+      "scope": "/building-insurance-valuation/",
+      "name": "heading levels not skipped",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/building-insurance-valuation/",
+      "name": "absolute self-referencing canonical",
+      "ok": true,
+      "detail": "http://localhost:3000/building-insurance-valuation/"
+    },
+    {
+      "scope": "/building-insurance-valuation/",
+      "name": "robots meta",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/building-insurance-valuation/",
+      "name": "html lang en-AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/building-insurance-valuation/",
+      "name": "og:title/description/url",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/building-insurance-valuation/",
+      "name": "og:image absolute",
+      "ok": true,
+      "detail": "http://localhost:3000/images/og-sinking-fund.jpg"
+    },
+    {
+      "scope": "/building-insurance-valuation/",
+      "name": "og:locale en_AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/building-insurance-valuation/",
+      "name": "twitter:card",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/building-insurance-valuation/",
+      "name": "JSON-LD parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/building-insurance-valuation/",
+      "name": "Organization JSON-LD",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/building-insurance-valuation/",
+      "name": "BreadcrumbList ends at this page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/building-insurance-valuation/",
+      "name": "no FAQPage/Review/AggregateRating schema",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/building-insurance-valuation/",
+      "name": "phone link tel:+61291149800",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/sinking-fund-plans/",
+      "name": "status 200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "/sinking-fund-plans/",
+      "name": "X-Robots-Tag",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/sinking-fund-plans/",
+      "name": "title matches inventory",
+      "ok": true,
+      "detail": "Capital Works & Sinking Fund Plan FAQs | Sinking Fund"
+    },
+    {
+      "scope": "/sinking-fund-plans/",
+      "name": "meta description",
+      "ok": true,
+      "detail": "148 chars"
+    },
+    {
+      "scope": "/sinking-fund-plans/",
+      "name": "exactly one H1",
+      "ok": true,
+      "detail": "Capital Works or Sinking Fund Plan FAQs"
+    },
+    {
+      "scope": "/sinking-fund-plans/",
+      "name": "heading levels not skipped",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/sinking-fund-plans/",
+      "name": "absolute self-referencing canonical",
+      "ok": true,
+      "detail": "http://localhost:3000/sinking-fund-plans/"
+    },
+    {
+      "scope": "/sinking-fund-plans/",
+      "name": "robots meta",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/sinking-fund-plans/",
+      "name": "html lang en-AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/sinking-fund-plans/",
+      "name": "og:title/description/url",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/sinking-fund-plans/",
+      "name": "og:image absolute",
+      "ok": true,
+      "detail": "http://localhost:3000/images/og-sinking-fund.jpg"
+    },
+    {
+      "scope": "/sinking-fund-plans/",
+      "name": "og:locale en_AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/sinking-fund-plans/",
+      "name": "twitter:card",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/sinking-fund-plans/",
+      "name": "JSON-LD parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/sinking-fund-plans/",
+      "name": "Organization JSON-LD",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/sinking-fund-plans/",
+      "name": "BreadcrumbList ends at this page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/sinking-fund-plans/",
+      "name": "no FAQPage/Review/AggregateRating schema",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/sinking-fund-plans/",
+      "name": "phone link tel:+61291149800",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/work-health-and-safety/",
+      "name": "status 200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "/work-health-and-safety/",
+      "name": "X-Robots-Tag",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/work-health-and-safety/",
+      "name": "title matches inventory",
+      "ok": true,
+      "detail": "Work Health & Safety Report FAQs | Sinking Fund"
+    },
+    {
+      "scope": "/work-health-and-safety/",
+      "name": "meta description",
+      "ok": true,
+      "detail": "149 chars"
+    },
+    {
+      "scope": "/work-health-and-safety/",
+      "name": "exactly one H1",
+      "ok": true,
+      "detail": "Work Health and Safety FAQs"
+    },
+    {
+      "scope": "/work-health-and-safety/",
+      "name": "heading levels not skipped",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/work-health-and-safety/",
+      "name": "absolute self-referencing canonical",
+      "ok": true,
+      "detail": "http://localhost:3000/work-health-and-safety/"
+    },
+    {
+      "scope": "/work-health-and-safety/",
+      "name": "robots meta",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/work-health-and-safety/",
+      "name": "html lang en-AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/work-health-and-safety/",
+      "name": "og:title/description/url",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/work-health-and-safety/",
+      "name": "og:image absolute",
+      "ok": true,
+      "detail": "http://localhost:3000/images/og-sinking-fund.jpg"
+    },
+    {
+      "scope": "/work-health-and-safety/",
+      "name": "og:locale en_AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/work-health-and-safety/",
+      "name": "twitter:card",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/work-health-and-safety/",
+      "name": "JSON-LD parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/work-health-and-safety/",
+      "name": "Organization JSON-LD",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/work-health-and-safety/",
+      "name": "BreadcrumbList ends at this page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/work-health-and-safety/",
+      "name": "no FAQPage/Review/AggregateRating schema",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/work-health-and-safety/",
+      "name": "phone link tel:+61291149800",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/asbestos-reports/",
+      "name": "status 200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "/asbestos-reports/",
+      "name": "X-Robots-Tag",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/asbestos-reports/",
+      "name": "title matches inventory",
+      "ok": true,
+      "detail": "Asbestos Report FAQs | Sinking Fund"
+    },
+    {
+      "scope": "/asbestos-reports/",
+      "name": "meta description",
+      "ok": true,
+      "detail": "148 chars"
+    },
+    {
+      "scope": "/asbestos-reports/",
+      "name": "exactly one H1",
+      "ok": true,
+      "detail": "Asbestos Report FAQs"
+    },
+    {
+      "scope": "/asbestos-reports/",
+      "name": "heading levels not skipped",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/asbestos-reports/",
+      "name": "absolute self-referencing canonical",
+      "ok": true,
+      "detail": "http://localhost:3000/asbestos-reports/"
+    },
+    {
+      "scope": "/asbestos-reports/",
+      "name": "robots meta",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/asbestos-reports/",
+      "name": "html lang en-AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/asbestos-reports/",
+      "name": "og:title/description/url",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/asbestos-reports/",
+      "name": "og:image absolute",
+      "ok": true,
+      "detail": "http://localhost:3000/images/og-sinking-fund.jpg"
+    },
+    {
+      "scope": "/asbestos-reports/",
+      "name": "og:locale en_AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/asbestos-reports/",
+      "name": "twitter:card",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/asbestos-reports/",
+      "name": "JSON-LD parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/asbestos-reports/",
+      "name": "Organization JSON-LD",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/asbestos-reports/",
+      "name": "BreadcrumbList ends at this page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/asbestos-reports/",
+      "name": "no FAQPage/Review/AggregateRating schema",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/asbestos-reports/",
+      "name": "phone link tel:+61291149800",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/testimonials/",
+      "name": "status 200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "/testimonials/",
+      "name": "X-Robots-Tag",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/testimonials/",
+      "name": "title matches inventory",
+      "ok": true,
+      "detail": "Client Testimonials | Sinking Fund"
+    },
+    {
+      "scope": "/testimonials/",
+      "name": "meta description",
+      "ok": true,
+      "detail": "141 chars"
+    },
+    {
+      "scope": "/testimonials/",
+      "name": "exactly one H1",
+      "ok": true,
+      "detail": "Testimonials"
+    },
+    {
+      "scope": "/testimonials/",
+      "name": "heading levels not skipped",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/testimonials/",
+      "name": "absolute self-referencing canonical",
+      "ok": true,
+      "detail": "http://localhost:3000/testimonials/"
+    },
+    {
+      "scope": "/testimonials/",
+      "name": "robots meta",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/testimonials/",
+      "name": "html lang en-AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/testimonials/",
+      "name": "og:title/description/url",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/testimonials/",
+      "name": "og:image absolute",
+      "ok": true,
+      "detail": "http://localhost:3000/images/og-sinking-fund.jpg"
+    },
+    {
+      "scope": "/testimonials/",
+      "name": "og:locale en_AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/testimonials/",
+      "name": "twitter:card",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/testimonials/",
+      "name": "JSON-LD parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/testimonials/",
+      "name": "Organization JSON-LD",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/testimonials/",
+      "name": "BreadcrumbList ends at this page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/testimonials/",
+      "name": "no FAQPage/Review/AggregateRating schema",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/testimonials/",
+      "name": "phone link tel:+61291149800",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/contact-us/",
+      "name": "status 200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "/contact-us/",
+      "name": "X-Robots-Tag",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/contact-us/",
+      "name": "title matches inventory",
+      "ok": true,
+      "detail": "Contact Sinking Fund | BIV Reports Pty Limited"
+    },
+    {
+      "scope": "/contact-us/",
+      "name": "meta description",
+      "ok": true,
+      "detail": "127 chars"
+    },
+    {
+      "scope": "/contact-us/",
+      "name": "exactly one H1",
+      "ok": true,
+      "detail": "Contact us"
+    },
+    {
+      "scope": "/contact-us/",
+      "name": "heading levels not skipped",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/contact-us/",
+      "name": "absolute self-referencing canonical",
+      "ok": true,
+      "detail": "http://localhost:3000/contact-us/"
+    },
+    {
+      "scope": "/contact-us/",
+      "name": "robots meta",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/contact-us/",
+      "name": "html lang en-AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/contact-us/",
+      "name": "og:title/description/url",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/contact-us/",
+      "name": "og:image absolute",
+      "ok": true,
+      "detail": "http://localhost:3000/images/og-sinking-fund.jpg"
+    },
+    {
+      "scope": "/contact-us/",
+      "name": "og:locale en_AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/contact-us/",
+      "name": "twitter:card",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/contact-us/",
+      "name": "JSON-LD parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/contact-us/",
+      "name": "Organization JSON-LD",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/contact-us/",
+      "name": "BreadcrumbList ends at this page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/contact-us/",
+      "name": "no FAQPage/Review/AggregateRating schema",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/contact-us/",
+      "name": "phone link tel:+61291149800",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/quote-request/",
+      "name": "status 200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "/quote-request/",
+      "name": "X-Robots-Tag",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/quote-request/",
+      "name": "title matches inventory",
+      "ok": true,
+      "detail": "Request a Property Services Quote | Sinking Fund"
+    },
+    {
+      "scope": "/quote-request/",
+      "name": "meta description",
+      "ok": true,
+      "detail": "132 chars"
+    },
+    {
+      "scope": "/quote-request/",
+      "name": "exactly one H1",
+      "ok": true,
+      "detail": "Request a Quote"
+    },
+    {
+      "scope": "/quote-request/",
+      "name": "heading levels not skipped",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/quote-request/",
+      "name": "absolute self-referencing canonical",
+      "ok": true,
+      "detail": "http://localhost:3000/quote-request/"
+    },
+    {
+      "scope": "/quote-request/",
+      "name": "robots meta",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/quote-request/",
+      "name": "html lang en-AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/quote-request/",
+      "name": "og:title/description/url",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/quote-request/",
+      "name": "og:image absolute",
+      "ok": true,
+      "detail": "http://localhost:3000/images/og-sinking-fund.jpg"
+    },
+    {
+      "scope": "/quote-request/",
+      "name": "og:locale en_AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/quote-request/",
+      "name": "twitter:card",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/quote-request/",
+      "name": "JSON-LD parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/quote-request/",
+      "name": "Organization JSON-LD",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/quote-request/",
+      "name": "BreadcrumbList ends at this page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/quote-request/",
+      "name": "no FAQPage/Review/AggregateRating schema",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/quote-request/",
+      "name": "phone link tel:+61291149800",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/legal/",
+      "name": "status 200",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "/legal/",
+      "name": "X-Robots-Tag",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/legal/",
+      "name": "title matches inventory",
+      "ok": true,
+      "detail": "Disclaimer & Privacy | Sinking Fund"
+    },
+    {
+      "scope": "/legal/",
+      "name": "meta description",
+      "ok": true,
+      "detail": "107 chars"
+    },
+    {
+      "scope": "/legal/",
+      "name": "exactly one H1",
+      "ok": true,
+      "detail": "Legal"
+    },
+    {
+      "scope": "/legal/",
+      "name": "heading levels not skipped",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/legal/",
+      "name": "absolute self-referencing canonical",
+      "ok": true,
+      "detail": "http://localhost:3000/legal/"
+    },
+    {
+      "scope": "/legal/",
+      "name": "robots meta",
+      "ok": true,
+      "detail": "noindex, nofollow"
+    },
+    {
+      "scope": "/legal/",
+      "name": "html lang en-AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/legal/",
+      "name": "og:title/description/url",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/legal/",
+      "name": "og:image absolute",
+      "ok": true,
+      "detail": "http://localhost:3000/images/og-sinking-fund.jpg"
+    },
+    {
+      "scope": "/legal/",
+      "name": "og:locale en_AU",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/legal/",
+      "name": "twitter:card",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/legal/",
+      "name": "JSON-LD parses",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/legal/",
+      "name": "Organization JSON-LD",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/legal/",
+      "name": "BreadcrumbList ends at this page",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/legal/",
+      "name": "no FAQPage/Review/AggregateRating schema",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "/legal/",
+      "name": "phone link tel:+61291149800",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "scope": "site",
+      "name": "unique title",
+      "ok": true,
+      "detail": "Property Compliance & Valuations | Sinking Fund: /"
+    },
+    {
+      "scope": "site",
+      "name": "unique title",
+      "ok": true,
+      "detail": "About Sinking Fund | BIV Reports Pty Limited: /about-us/"
+    },
+    {
+      "scope": "site",
+      "name": "unique title",
+      "ok": true,
+      "detail": "Building Insurance Valuation Services | Sinking Fund: /services/biv/"
+    },
+    {
+      "scope": "site",
+      "name": "unique title",
+      "ok": true,
+      "detail": "Capital Works & Sinking Fund Plans | Sinking Fund: /services/sfp/"
+    },
+    {
+      "scope": "site",
+      "name": "unique title",
+      "ok": true,
+      "detail": "Work Health & Safety Reports | Sinking Fund: /services/whs/"
+    },
+    {
+      "scope": "site",
+      "name": "unique title",
+      "ok": true,
+      "detail": "Asbestos Register & Management Plan Reports | Sinking Fund: /services/asb/"
+    },
+    {
+      "scope": "site",
+      "name": "unique title",
+      "ok": true,
+      "detail": "Building Insurance Valuation FAQs | Sinking Fund: /building-insurance-valuation/"
+    },
+    {
+      "scope": "site",
+      "name": "unique title",
+      "ok": true,
+      "detail": "Capital Works & Sinking Fund Plan FAQs | Sinking Fund: /sinking-fund-plans/"
+    },
+    {
+      "scope": "site",
+      "name": "unique title",
+      "ok": true,
+      "detail": "Work Health & Safety Report FAQs | Sinking Fund: /work-health-and-safety/"
+    },
+    {
+      "scope": "site",
+      "name": "unique title",
+      "ok": true,
+      "detail": "Asbestos Report FAQs | Sinking Fund: /asbestos-reports/"
+    },
+    {
+      "scope": "site",
+      "name": "unique title",
+      "ok": true,
+      "detail": "Client Testimonials | Sinking Fund: /testimonials/"
+    },
+    {
+      "scope": "site",
+      "name": "unique title",
+      "ok": true,
+      "detail": "Contact Sinking Fund | BIV Reports Pty Limited: /contact-us/"
+    },
+    {
+      "scope": "site",
+      "name": "unique title",
+      "ok": true,
+      "detail": "Request a Property Services Quote | Sinking Fund: /quote-request/"
+    },
+    {
+      "scope": "site",
+      "name": "unique title",
+      "ok": true,
+      "detail": "Disclaimer & Privacy | Sinking Fund: /legal/"
+    },
+    {
+      "scope": "site",
+      "name": "unique description",
+      "ok": true,
+      "detail": "/"
+    },
+    {
+      "scope": "site",
+      "name": "unique description",
+      "ok": true,
+      "detail": "/about-us/"
+    },
+    {
+      "scope": "site",
+      "name": "unique description",
+      "ok": true,
+      "detail": "/services/biv/"
+    },
+    {
+      "scope": "site",
+      "name": "unique description",
+      "ok": true,
+      "detail": "/services/sfp/"
+    },
+    {
+      "scope": "site",
+      "name": "unique description",
+      "ok": true,
+      "detail": "/services/whs/"
+    },
+    {
+      "scope": "site",
+      "name": "unique description",
+      "ok": true,
+      "detail": "/services/asb/"
+    },
+    {
+      "scope": "site",
+      "name": "unique description",
+      "ok": true,
+      "detail": "/building-insurance-valuation/"
+    },
+    {
+      "scope": "site",
+      "name": "unique description",
+      "ok": true,
+      "detail": "/sinking-fund-plans/"
+    },
+    {
+      "scope": "site",
+      "name": "unique description",
+      "ok": true,
+      "detail": "/work-health-and-safety/"
+    },
+    {
+      "scope": "site",
+      "name": "unique description",
+      "ok": true,
+      "detail": "/asbestos-reports/"
+    },
+    {
+      "scope": "site",
+      "name": "unique description",
+      "ok": true,
+      "detail": "/testimonials/"
+    },
+    {
+      "scope": "site",
+      "name": "unique description",
+      "ok": true,
+      "detail": "/contact-us/"
+    },
+    {
+      "scope": "site",
+      "name": "unique description",
+      "ok": true,
+      "detail": "/quote-request/"
+    },
+    {
+      "scope": "site",
+      "name": "unique description",
+      "ok": true,
+      "detail": "/legal/"
+    },
+    {
+      "scope": "links",
+      "name": "internal link /",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "links",
+      "name": "internal link /about-us/",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "links",
+      "name": "internal link /services/biv/",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "links",
+      "name": "internal link /services/sfp/",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "links",
+      "name": "internal link /services/whs/",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "links",
+      "name": "internal link /services/asb/",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "links",
+      "name": "internal link /testimonials/",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "links",
+      "name": "internal link /building-insurance-valuation/",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "links",
+      "name": "internal link /sinking-fund-plans/",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "links",
+      "name": "internal link /work-health-and-safety/",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "links",
+      "name": "internal link /asbestos-reports/",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "links",
+      "name": "internal link /contact-us/",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "links",
+      "name": "internal link /quote-request/",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "links",
+      "name": "internal link /legal/",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "links",
+      "name": "internal link /quote-request/?service=biv",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "links",
+      "name": "internal link /quote-request/?service=sfp",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "links",
+      "name": "internal link /quote-request/?service=whs",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "links",
+      "name": "internal link /quote-request/?service=asbestos",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "assets",
+      "name": "image /_next/image/?url=%2Fimages%2Fmarks%2Fbrand.png&w=64&q=75",
+      "ok": true,
+      "detail": "200 image/png"
+    },
+    {
+      "scope": "assets",
+      "name": "image /_next/image/?url=%2Fimages%2Fcity-towers.jpg&w=1920&q=60",
+      "ok": true,
+      "detail": "200 image/jpeg"
+    },
+    {
+      "scope": "assets",
+      "name": "image /_next/image/?url=%2Fimages%2Fmarks%2Fbiv.png&w=128&q=75",
+      "ok": true,
+      "detail": "200 image/png"
+    },
+    {
+      "scope": "assets",
+      "name": "image /_next/image/?url=%2Fimages%2Fmarks%2Fwhs.png&w=128&q=75",
+      "ok": true,
+      "detail": "200 image/png"
+    },
+    {
+      "scope": "assets",
+      "name": "image /_next/image/?url=%2Fimages%2Fmarks%2Fsfp.png&w=128&q=75",
+      "ok": true,
+      "detail": "200 image/png"
+    },
+    {
+      "scope": "assets",
+      "name": "image /_next/image/?url=%2Fimages%2Fmarks%2Fasb.png&w=128&q=75",
+      "ok": true,
+      "detail": "200 image/png"
+    },
+    {
+      "scope": "assets",
+      "name": "image /_next/image/?url=%2Fimages%2Fapartment-building.jpg&w=1920&q=70",
+      "ok": true,
+      "detail": "200 image/jpeg"
+    },
+    {
+      "scope": "assets",
+      "name": "image /_next/image/?url=%2Fimages%2Fmarks%2Fbrand.png&w=96&q=75",
+      "ok": true,
+      "detail": "200 image/png"
+    },
+    {
+      "scope": "assets",
+      "name": "/favicon.ico",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "assets",
+      "name": "/icon.png",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "assets",
+      "name": "/apple-icon.png",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "assets",
+      "name": "/images/og-sinking-fund.jpg",
+      "ok": true,
+      "detail": "200"
+    },
+    {
+      "scope": "sitemap",
+      "name": "empty on non-indexable builds",
+      "ok": true,
+      "detail": "0 entries"
+    },
+    {
+      "scope": "robots.txt",
+      "name": "disallows all",
+      "ok": true,
+      "detail": "User-Agent: * ⏎ Disallow: / ⏎  ⏎ "
+    },
+    {
+      "scope": "404",
+      "name": "/this-page-does-not-exist/ returns real 404",
+      "ok": true,
+      "detail": "404"
+    },
+    {
+      "scope": "404",
+      "name": "/services/unknown/ returns real 404",
+      "ok": true,
+      "detail": "404"
+    },
+    {
+      "scope": "404",
+      "name": "/wp-admin/ returns real 404",
+      "ok": true,
+      "detail": "404"
+    },
+    {
+      "scope": "redirects",
+      "name": "/index.html → /",
+      "ok": true,
+      "detail": "301 → / (200)"
+    },
+    {
+      "scope": "redirects",
+      "name": "/about-us/index.html → /about-us/",
+      "ok": true,
+      "detail": "301 → /about-us/ (200)"
+    },
+    {
+      "scope": "redirects",
+      "name": "/services/biv/index.html → /services/biv/",
+      "ok": true,
+      "detail": "301 → /services/biv/ (200)"
+    },
+    {
+      "scope": "redirects",
+      "name": "/?p=3828 → /about-us/",
+      "ok": true,
+      "detail": "301 → /about-us/ (200)"
+    },
+    {
+      "scope": "redirects",
+      "name": "/?p=3835 → /services/biv/",
+      "ok": true,
+      "detail": "301 → /services/biv/ (200)"
+    },
+    {
+      "scope": "redirects",
+      "name": "/?page_id=4493 → /quote-request/",
+      "ok": true,
+      "detail": "301 → /quote-request/ (200)"
+    },
+    {
+      "scope": "redirects",
+      "name": "/index.html?p=3897 → /asbestos-reports/",
+      "ok": true,
+      "detail": "301 → /asbestos-reports/ (200)"
+    },
+    {
+      "scope": "redirects",
+      "name": "/?p=3905&utm_source=newsletter → /testimonials/?utm_source=newsletter",
+      "ok": true,
+      "detail": "301 → /testimonials/?utm_source=newsletter (200)"
+    },
+    {
+      "scope": "redirects",
+      "name": "/wp-content/uploads/2018/04/house-1723353_1920-1.jpg → /images/red-brick-property.jpg",
+      "ok": true,
+      "detail": "301 → /images/red-brick-property.jpg (200)"
+    },
+    {
+      "scope": "redirects",
+      "name": "/wp-content/uploads/2018/04/m-sfp.png → /images/marks/sfp.png",
+      "ok": true,
+      "detail": "301 → /images/marks/sfp.png (200)"
+    },
+    {
+      "scope": "redirects",
+      "name": "/about-us → /about-us/",
+      "ok": true,
+      "detail": "308 → /about-us/ (200)"
+    },
+    {
+      "scope": "redirects",
+      "name": "/services/sfp → /services/sfp/",
+      "ok": true,
+      "detail": "308 → /services/sfp/ (200)"
+    },
+    {
+      "scope": "redirects",
+      "name": "unknown ?p= id is not redirected",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}
