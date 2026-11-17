@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BRAND, routes } from "@/lib/site";
+import { megaData } from "@/lib/mega";
 import { footerNav, primaryNav, isGroup } from "@/lib/nav";
 import { DesktopNav } from "./DesktopNav";
 import { MobileNav } from "./MobileNav";
@@ -26,7 +27,7 @@ export function Header() {
           <Image src="/images/marks/brand.png" alt="" width={30} height={34} className="wordmark__mark" />
           <span>{BRAND.wordmark}</span>
         </Link>
-        <DesktopNav />
+        <DesktopNav mega={megaData()} />
         <div className="site-header__actions">
           <a href={BRAND.phoneHref} className="phone-link">
             <span className="phone-link__icon" aria-hidden="true">

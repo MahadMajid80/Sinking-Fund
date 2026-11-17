@@ -84,7 +84,7 @@ test.describe("navigation", () => {
     // FAQ menu
     const faq = page.getByRole("button", { name: "FAQ" });
     await faq.click();
-    await page.locator("#nav-faq").getByRole("link", { name: "Asbestos Reports" }).click();
+    await page.locator("#nav-faq").getByRole("link", { name: "Asbestos Reports", exact: true }).click();
     await expect(page).toHaveURL("/asbestos-reports/");
     await expect(page.getByRole("button", { name: "FAQ" })).toHaveAttribute("aria-expanded", "false");
   });
@@ -268,14 +268,14 @@ test.describe("navigation scroll position", () => {
     await page.goto("/about-us/");
     for (const href of ["/testimonials/", "/contact-us/", "/about-us/"]) {
       await page.evaluate(() => window.scrollTo(0, 700));
-      await page.locator(`nav.nav a[href="${href}"]`).click();
+      await page.locator(`nav.nav a.nav__link[href="${href}"]`).click();
       await expect(page).toHaveURL(href);
       await expect.poll(() => page.evaluate(() => Math.round(window.scrollY))).toBe(0);
     }
     await page.evaluate(() => window.scrollTo(0, 600));
     await page.waitForTimeout(200);
     // A script click, so the browser doesn't scroll the link into view first.
-    await page.evaluate(() => (document.querySelector('nav.nav a[href="/testimonials/"]') as HTMLElement).click());
+    await page.evaluate(() => (document.querySelector('nav.nav a.nav__link[href="/testimonials/"]') as HTMLElement).click());
     await expect(page).toHaveURL("/testimonials/");
     await page.goBack();
     await expect(page).toHaveURL("/about-us/");
@@ -292,5 +292,41 @@ test.describe("navigation scroll position", () => {
       return target - document.querySelector(".site-header__inner")!.getBoundingClientRect().bottom;
     });
     expect(gap).toBeGreaterThan(0);
+  });
+});
+
+test.describe("mega menus", () => {
+  test.use({ viewport: { width: 1440, height: 900 } });
+
+  test("Services and FAQ open as mega menus with every service and topic", async ({ page }) => {
+    await page.goto("/");
+    await page.getByRole("button", { name: "Services" }).click();
+    const services = page.locator("#nav-services");
+    await expect(services.locator(".mega-card")).toHaveCount(4);
+    await expect(services.getByRole("link", { name: "Request a Quote" })).toHaveAttribute("href", "/quote-request/");
+    await page.getByRole("button", { name: "FAQ" }).click();
+    await expect(services).toBeHidden();
+    const faq = page.locator("#nav-faq");
+    await expect(faq.locator(".mega-topic")).toHaveCount(4);
+    await expect(faq.locator(".mega-topic__questions a")).toHaveCount(12);
+    const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"]).analyze();
+    expect(results.violations.map((v) => v.id)).toEqual([]);
+  });
+
+  test("hover opens a menu and leaving closes it", async ({ page }) => {
+    await page.goto("/about-us/");
+    await page.getByRole("button", { name: "Services" }).hover();
+    await expect(page.locator("#nav-services")).toBeVisible();
+    await page.mouse.move(700, 880);
+    await expect(page.locator("#nav-services")).toBeHidden();
+  });
+
+  test("a question link opens that answer on the FAQ page", async ({ page }) => {
+    await page.goto("/");
+    await page.getByRole("button", { name: "FAQ" }).click();
+    await page.locator('#nav-faq a[href="/asbestos-reports/#do-the-owners-need-one"]').click();
+    await expect(page).toHaveURL("/asbestos-reports/#do-the-owners-need-one");
+    await expect(page.locator("#do-the-owners-need-one")).toHaveAttribute("open", "");
+    await expect(page.locator("#nav-faq")).toBeHidden();
   });
 });
