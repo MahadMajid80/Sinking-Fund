@@ -8,19 +8,18 @@ const uid = () => Math.random().toString(36).slice(2, 10);
 const next = (page: Page) => page.locator(".form-step:not([hidden]) .step-nav__next").click();
 const activeStep = (page: Page) => page.locator(".form-step:not([hidden])");
 
-/** Contact form: fills step 1 and moves to the given step (2 or 3). */
-async function contactTo(page: Page, stepNo: 2 | 3, name = "Test Person", email = "test@example.com") {
+/** Contact form: fills step 1 and continues to step 2 ("Your enquiry"). */
+async function contactToStep2(page: Page, name = "Test Person", email = "test@example.com") {
   await page.getByLabel("Your name (required)").fill(name);
   await page.getByLabel("Your email (required)").fill(email);
   await next(page);
-  if (stepNo === 3) await next(page);
 }
 
 test.describe("contact form", () => {
-  test("is split into three steps with a progress bar", async ({ page }) => {
+  test("is split into two steps with a progress bar", async ({ page }) => {
     await page.goto("/contact-us/");
     const stepper = page.getByRole("navigation", { name: "Form progress" });
-    await expect(stepper.locator("li")).toHaveText([/About you/, /Your enquiry/, /How we reply/]);
+    await expect(stepper.locator("li")).toHaveText([/About you/, /Your enquiry/]);
     await expect(stepper.locator('[aria-current="step"]')).toContainText("About you");
     await expect(activeStep(page)).toHaveAttribute("data-step", "about");
     await expect(page.getByLabel("Your message")).toBeHidden();
@@ -28,7 +27,7 @@ test.describe("contact form", () => {
     expect(results.violations.map((v) => v.id)).toEqual([]);
   });
 
-  test("checks each step before moving on, with a focused error summary", async ({ page }) => {
+  test("checks the first step before moving on, with a focused error summary", async ({ page }) => {
     await page.goto("/contact-us/");
     await next(page);
     const summary = page.locator(".form-alert");
@@ -65,16 +64,12 @@ test.describe("contact form", () => {
     await expect(page.getByLabel("Subject")).toHaveValue("Keep me");
   });
 
-  test("the last step reviews the details and Change returns to a step", async ({ page }) => {
+  test("the second step reviews the first and Change returns to it", async ({ page }) => {
     await page.goto("/contact-us/");
-    await contactTo(page, 2, "Review Person", "review@example.com");
-    await page.getByLabel("Asbestos Report").check();
-    await page.getByLabel("Subject").fill("Review subject");
-    await next(page);
+    await contactToStep2(page, "Review Person", "review@example.com");
     const review = page.getByRole("region", { name: "Check your details" });
     await expect(review).toContainText("Review Person");
     await expect(review).toContainText("review@example.com");
-    await expect(review).toContainText("Asbestos Report");
     await expect(review).toContainText("Not provided");
     await review.getByRole("button", { name: "Change about you" }).click();
     await expect(activeStep(page)).toHaveAttribute("data-step", "about");
@@ -95,7 +90,6 @@ test.describe("contact form", () => {
     await page.getByLabel("OHS Report (VIC)").check();
     await page.getByLabel("Subject").fill("Strata plan enquiry");
     await page.getByLabel("Your message").fill("Line one\nLine two");
-    await next(page);
     await page.getByLabel("Call back").check();
     await page.getByLabel("Send info").check();
     await humanPause(page);
@@ -121,9 +115,9 @@ test.describe("contact form", () => {
     expect(page.url()).not.toContain("jane");
   });
 
-  test("the last step still requires a reply preference", async ({ page }) => {
+  test("the second step still requires a reply preference", async ({ page }) => {
     await page.goto("/contact-us/");
-    await contactTo(page, 3);
+    await contactToStep2(page);
     await page.getByRole("button", { name: "Send message" }).click();
     await expect(page.locator(".form-alert")).toBeFocused();
     await expect(page.locator("#contact-preference-error")).toHaveText(/Choose at least one way/);
@@ -131,9 +125,8 @@ test.describe("contact form", () => {
 
   test("shows a delivery failure and keeps the entered values", async ({ page }) => {
     await page.goto("/contact-us/");
-    await contactTo(page, 2, "Delivery Test", "delivery@example.com");
+    await contactToStep2(page, "Delivery Test", "delivery@example.com");
     await page.getByLabel("Your message").fill("Please fail: MOCK_DELIVERY_FAILURE");
-    await next(page);
     await page.getByLabel("Email back").check();
     await humanPause(page);
     await page.getByRole("button", { name: "Send message" }).click();
@@ -143,14 +136,13 @@ test.describe("contact form", () => {
     await expect(alert.getByRole("link", { name: "(02) 9114 9800" })).toHaveAttribute("href", "tel:+61291149800");
     await expect(page.getByLabel("Email back")).toBeChecked();
     await activeStep(page).getByRole("button", { name: "Back" }).click();
-    await activeStep(page).getByRole("button", { name: "Back" }).click();
     await expect(page.getByLabel("Your name (required)")).toHaveValue("Delivery Test");
   });
 
   test("double clicking submit sends one email", async ({ page }) => {
     const token = uid();
     await page.goto("/contact-us/");
-    await contactTo(page, 3, `Double ${token}`, "double@example.com");
+    await contactToStep2(page, `Double ${token}`, "double@example.com");
     await page.getByLabel("Call back").check();
     await humanPause(page);
     await page.getByRole("button", { name: "Send message" }).dblclick();
@@ -164,7 +156,7 @@ test.describe("contact form", () => {
     const context = await browser.newContext({ javaScriptEnabled: false });
     const page = await context.newPage();
     await page.goto("/contact-us/");
-    await expect(page.locator(".form-step")).toHaveCount(3);
+    await expect(page.locator(".form-step")).toHaveCount(2);
     for (const s of await page.locator(".form-step").all()) await expect(s).toBeVisible();
     await expect(page.locator(".stepper")).toBeHidden();
     await expect(page.locator(".step-nav__next").first()).toBeHidden();
@@ -196,28 +188,26 @@ test.describe("quote form", () => {
     await expect(page.getByLabel("Asbestos Report")).toBeChecked();
   });
 
-  test("has four steps, starts empty and validates each step", async ({ page }) => {
+  test("has two steps, starts empty and validates each step", async ({ page }) => {
     await page.goto("/quote-request/");
-    await expect(page.getByRole("navigation", { name: "Form progress" }).locator("li")).toHaveText([
-      /Services and site/,
-      /Strata manager/,
-      /Site access contact/,
-      /Final details/,
-    ]);
+    await expect(page.getByRole("navigation", { name: "Form progress" }).locator("li")).toHaveText([/Property and site access/, /Strata manager/]);
     for (const id of ["quote-strata-plan", "quote-lots", "quote-site-address"]) await expect(page.locator(`#${id}`)).toHaveValue("");
     await next(page);
     const summary = page.locator(".form-alert");
     await expect(summary).toBeFocused();
-    await expect(summary).toContainText("There is a problem with 1 field");
+    await expect(summary).toContainText("There are problems with 3 fields");
     await expect(summary).toContainText("Select at least one service to quote.");
     await page.getByLabel("Asbestos Report").check();
+    const site = page.getByRole("group", { name: "Site access contact" });
+    await site.getByLabel("Name (required)").fill("Sam Site");
+    await site.getByLabel("Address (required)").fill("Unit 1, 1 Example Street");
     await page.locator("#quote-lots").fill("twelve");
     await next(page);
     await expect(page.locator("#quote-lots-error")).toContainText("whole number");
     await page.locator("#quote-lots").fill("12");
     await next(page);
     await expect(activeStep(page)).toHaveAttribute("data-step", "manager");
-    await next(page);
+    await page.getByRole("button", { name: "Send quote request" }).click();
     await expect(page.locator(".form-alert")).toContainText("There are problems with 4 fields");
     const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"]).analyze();
     expect(results.violations.map((v) => v.id)).toEqual([]);
@@ -230,6 +220,11 @@ test.describe("quote form", () => {
     await page.getByLabel("Strata plan number").fill(`SP${token}`);
     await page.getByLabel("Number of lots").fill("12");
     await page.getByLabel("Site address").fill("1 Example Street, Sydney NSW 2000");
+    const site = page.getByRole("group", { name: "Site access contact" });
+    await site.getByLabel("Name (required)").fill("Sam Site");
+    await site.getByLabel("Phone number").fill("02 2222 2222");
+    await site.getByLabel("Mobile number").fill("0433 333 333");
+    await site.getByLabel("Address (required)").fill("Unit 1, 1 Example Street");
     await next(page);
     const mgr = activeStep(page);
     await mgr.getByLabel("Strata manager name (required)").fill("Morgan Manager");
@@ -237,13 +232,6 @@ test.describe("quote form", () => {
     await mgr.getByLabel("Phone number").fill("02 1111 1111");
     await mgr.getByLabel("Email (required)").fill("manager@example.com");
     await mgr.getByLabel("Address (required)").fill("PO Box 1, Sydney NSW 2001");
-    await next(page);
-    const site = activeStep(page);
-    await site.getByLabel("Name (required)").fill("Sam Site");
-    await site.getByLabel("Phone number").fill("02 2222 2222");
-    await site.getByLabel("Mobile number").fill("0433 333 333");
-    await site.getByLabel("Address (required)").fill("Unit 1, 1 Example Street");
-    await next(page);
     await page.getByLabel("Special Instructions").fill("Key with building manager");
     await page.getByRole("group", { name: "Preference" }).getByLabel("Email back").check();
     const review = page.getByRole("region", { name: "Check your details" });
@@ -265,6 +253,27 @@ test.describe("quote form", () => {
     expect(f["Site contact mobile number"]).toBe("0433 333 333");
     expect(f["Preference"]).toBe("Email back");
     expect(m.html).toContain("<th align=\"left\" valign=\"top\" style=\"border-bottom:1px solid #ddd;width:220px\">Site contact mobile number</th><td style=\"border-bottom:1px solid #ddd;white-space:pre-wrap\">0433 333 333</td>");
+  });
+
+  test("a server-side error on the first step returns there", async ({ page }) => {
+    await page.goto("/quote-request/?service=biv");
+    const site = page.getByRole("group", { name: "Site access contact" });
+    await site.getByLabel("Name (required)").fill("Sam Site");
+    await site.getByLabel("Address (required)").fill("Unit 1");
+    await next(page);
+    // Clear a required first-step field behind the form's back, then submit from step 2.
+    await page.evaluate(() => {
+      const el = document.getElementById("quote-site-contact-name") as HTMLInputElement;
+      el.value = "";
+    });
+    const mgr = activeStep(page);
+    await mgr.getByLabel("Strata manager name (required)").fill("M");
+    await mgr.getByLabel("Company (required)").fill("C");
+    await mgr.getByLabel("Email (required)").fill("m@example.com");
+    await mgr.getByLabel("Address (required)").fill("A");
+    await page.getByRole("button", { name: "Send quote request" }).click();
+    await expect(activeStep(page)).toHaveAttribute("data-step", "property");
+    await expect(page.locator(".form-alert")).toBeFocused();
   });
 });
 

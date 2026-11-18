@@ -87,8 +87,8 @@ All configuration is in [`.env.example`](.env.example). Everything is server-sid
 
 | Form | Steps |
 |---|---|
-| Contact | About you → Your enquiry → How we reply |
-| Quote | Services and site → Strata manager → Site access contact → Final details |
+| Contact | About you → Your enquiry (including how we reply) |
+| Quote | Property and site access → Strata manager (including instructions and reply preference) |
 
 The steps are defined in `contactSteps` and `quoteSteps` in `src/lib/forms/schema.ts`. To regroup fields, edit those lists and move the matching fields between the step panels in `ContactForm.tsx` and `QuoteForm.tsx`.
 

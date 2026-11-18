@@ -91,6 +91,16 @@ export function QuoteForm() {
           </div>
           <TextField id={ids.siteAddress} name="siteAddress" label="Site address" autoComplete="off" maxLength={LIMITS.address} error={e.siteAddress} />
         </fieldset>
+        <fieldset className="form-section">
+          <legend>Site access contact</legend>
+          <p className="form-section__hint">The person who can give our valuer access to the property.</p>
+          <div className="form-grid">
+            <TextField id={ids.siteContactName} name="siteContactName" label="Name" required autoComplete="off" maxLength={LIMITS.name} error={e.siteContactName} />
+            <TextField id={ids.siteContactPhone} name="siteContactPhone" label="Phone number" type="tel" autoComplete="off" maxLength={LIMITS.phone} error={e.siteContactPhone} />
+            <TextField id={ids.siteContactMobile} name="siteContactMobile" label="Mobile number" type="tel" autoComplete="off" maxLength={LIMITS.phone} error={e.siteContactMobile} />
+          </div>
+          <TextField id={ids.siteContactAddress} name="siteContactAddress" label="Address" required autoComplete="off" maxLength={LIMITS.address} error={e.siteContactAddress} />
+        </fieldset>
         <StepNav index={0} onBack={back} onNext={next} nextLabel={steps[1].title} />
       </StepPanel>
 
@@ -102,20 +112,6 @@ export function QuoteForm() {
           <TextField id={ids.managerEmail} name="managerEmail" label="Email" type="email" required autoComplete="email" maxLength={LIMITS.email} error={e.managerEmail} />
         </div>
         <TextField id={ids.managerAddress} name="managerAddress" label="Address" required autoComplete="street-address" maxLength={LIMITS.address} error={e.managerAddress} />
-        <StepNav index={1} onBack={back} onNext={next} nextLabel={steps[2].title} />
-      </StepPanel>
-
-      <StepPanel {...panel} index={2} headingRef={headingRef(2)}>
-        <div className="form-grid">
-          <TextField id={ids.siteContactName} name="siteContactName" label="Name" required autoComplete="off" maxLength={LIMITS.name} error={e.siteContactName} />
-          <TextField id={ids.siteContactPhone} name="siteContactPhone" label="Phone number" type="tel" autoComplete="off" maxLength={LIMITS.phone} error={e.siteContactPhone} />
-          <TextField id={ids.siteContactMobile} name="siteContactMobile" label="Mobile number" type="tel" autoComplete="off" maxLength={LIMITS.phone} error={e.siteContactMobile} />
-        </div>
-        <TextField id={ids.siteContactAddress} name="siteContactAddress" label="Address" required autoComplete="off" maxLength={LIMITS.address} error={e.siteContactAddress} />
-        <StepNav index={2} onBack={back} onNext={next} nextLabel={steps[3].title} />
-      </StepPanel>
-
-      <StepPanel {...panel} index={3} headingRef={headingRef(3)}>
         <TextField id={ids.specialInstructions} name="specialInstructions" label="Special Instructions" multiline rows={5} maxLength={LIMITS.instructions} error={e.specialInstructions} />
         <CheckboxGroup id={ids.replyPreference} name="replyPreference" legend="Preference" hint="How would you like us to reply?" options={QUOTE_PREFERENCES} error={e.replyPreference} />
         {step === last ? <StepReview formId="quote" def={quoteForm} steps={steps} values={review} onEdit={goTo} /> : null}

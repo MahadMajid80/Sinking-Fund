@@ -63,10 +63,6 @@ export function ContactForm() {
         <CheckboxGroup id={ids.enquiryTypes} name="enquiryTypes" legend="Is your query regarding any of the following?" options={SERVICE_OPTIONS} columns error={e.enquiryTypes} />
         <TextField id={ids.subject} name="subject" label="Subject" maxLength={LIMITS.subject} error={e.subject} />
         <TextField id={ids.message} name="message" label="Your message" multiline maxLength={LIMITS.message} error={e.message} />
-        <StepNav index={1} onBack={back} onNext={next} nextLabel={steps[2].title} />
-      </StepPanel>
-
-      <StepPanel {...panel} index={2} headingRef={headingRef(2)}>
         <CheckboxGroup
           id={ids.contactPreference}
           name="contactPreference"

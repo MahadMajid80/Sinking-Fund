@@ -229,15 +229,27 @@ export interface FormStep {
 
 export const contactSteps: FormStep[] = [
   { id: "about", title: "About you", intro: "Tell us who you are and how to reach you.", fields: ["name", "email", "phone"] },
-  { id: "enquiry", title: "Your enquiry", intro: "Let us know what your question is about.", fields: ["enquiryTypes", "subject", "message"] },
-  { id: "reply", title: "How we reply", intro: "Choose how you’d like us to respond, then check your details.", fields: ["contactPreference"] },
+  {
+    id: "enquiry",
+    title: "Your enquiry",
+    intro: "Let us know what your question is about and how you’d like us to reply.",
+    fields: ["enquiryTypes", "subject", "message", "contactPreference"],
+  },
 ];
 
 export const quoteSteps: FormStep[] = [
-  { id: "job", title: "Services and site", intro: "Choose the services to quote and tell us about the property.", fields: ["services", "strataPlanNumber", "numberOfLots", "siteAddress"] },
-  { id: "manager", title: "Strata manager", intro: "Who should we send the quote to?", fields: ["managerName", "managerCompany", "managerPhone", "managerEmail", "managerAddress"] },
-  { id: "site", title: "Site access contact", intro: "Who can give our valuer access to the property?", fields: ["siteContactName", "siteContactPhone", "siteContactMobile", "siteContactAddress"] },
-  { id: "final", title: "Final details", intro: "Add any instructions and how you’d like us to reply, then check your details.", fields: ["specialInstructions", "replyPreference"] },
+  {
+    id: "property",
+    title: "Property and site access",
+    intro: "Choose the services to quote, tell us about the property, and who can give our valuer access.",
+    fields: ["services", "strataPlanNumber", "numberOfLots", "siteAddress", "siteContactName", "siteContactPhone", "siteContactMobile", "siteContactAddress"],
+  },
+  {
+    id: "manager",
+    title: "Strata manager",
+    intro: "Who should we send the quote to? Add any instructions, then check your details.",
+    fields: ["managerName", "managerCompany", "managerPhone", "managerEmail", "managerAddress", "specialInstructions", "replyPreference"],
+  },
 ];
 
 /** Index of the step that holds a field, or -1. */

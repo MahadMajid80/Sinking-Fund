@@ -2088,6 +2088,11 @@ html[data-scrolled] .site-header__inner {
 .form-section legend + * {
   clear: both;
 }
+.form-section__hint {
+  margin: -0.5rem 0 1rem;
+  font-size: var(--step--1);
+  color: var(--body);
+}
 .field {
   margin-bottom: 1.15rem;
 }
