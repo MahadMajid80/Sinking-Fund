@@ -10,7 +10,7 @@ export default function LegalPage() {
     <>
       <PageHeader trail={["home", "legal"]} title="Legal" intro={<p>Disclaimer, privacy and links.</p>} photo="none" />
       <div className="container container--narrow prose legal">
-        <nav aria-label="On this page" className="inline-toc">
+        <nav aria-label="On This Page" className="inline-toc">
           <a href="#disclaimer">Disclaimer</a>
           <a href="#privacy">Privacy</a>
           <a href="#links">Links</a>

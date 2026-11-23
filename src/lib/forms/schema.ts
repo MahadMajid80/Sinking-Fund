@@ -6,13 +6,13 @@
 
 /** The seven original service labels, verbatim from both Contact Form 7 forms. */
 export const SERVICE_OPTIONS = [
-  { value: "biv", label: "Building insurance valuation" },
-  { value: "asbestos", label: "Asbestos report" },
-  { value: "whs", label: "WHS report" },
-  { value: "ohs-vic", label: "OHS report (VIC)" },
-  { value: "window-safety", label: "Window safety report" },
-  { value: "sfp", label: "Sinking fund plan" },
-  { value: "maintenance-plan-vic", label: "Maintenance plan (VIC)" },
+  { value: "biv", label: "Building Insurance Valuation" },
+  { value: "asbestos", label: "Asbestos Report" },
+  { value: "whs", label: "WHS Report" },
+  { value: "ohs-vic", label: "OHS Report (VIC)" },
+  { value: "window-safety", label: "Window Safety Report" },
+  { value: "sfp", label: "Sinking Fund Plan" },
+  { value: "maintenance-plan-vic", label: "Maintenance Plan (VIC)" },
 ] as const;
 export type ServiceValue = (typeof SERVICE_OPTIONS)[number]["value"];
 
@@ -26,15 +26,15 @@ export const SERVICE_PAGE_TO_OPTION: Record<string, ServiceValue> = {
 
 /** Contact form preference options (export value "Email  back" contained a double space). */
 export const CONTACT_PREFERENCES = [
-  { value: "call-back", label: "Call back" },
-  { value: "email-back", label: "Email back" },
-  { value: "send-info", label: "Send info" },
+  { value: "call-back", label: "Call Back" },
+  { value: "email-back", label: "Email Back" },
+  { value: "send-info", label: "Send Info" },
 ] as const;
 
 /** Quote form reply preference options. */
 export const QUOTE_PREFERENCES = [
-  { value: "call-back", label: "Call back" },
-  { value: "email-back", label: "Email back" },
+  { value: "call-back", label: "Call Back" },
+  { value: "email-back", label: "Email Back" },
 ] as const;
 
 export const LIMITS = {
@@ -71,9 +71,9 @@ export const contactForm: FormDefinition = {
   id: "contact",
   order: ["name", "email", "phone", "contactPreference", "enquiryTypes", "subject", "message"],
   fields: {
-    name: { kind: "text", label: "Your name", required: true, max: LIMITS.name },
-    email: { kind: "email", label: "Your email", required: true },
-    phone: { kind: "tel", label: "Your phone number" },
+    name: { kind: "text", label: "Your Name", required: true, max: LIMITS.name },
+    email: { kind: "email", label: "Your Email", required: true },
+    phone: { kind: "tel", label: "Your Phone Number" },
     contactPreference: {
       kind: "multi",
       label: "Preference",
@@ -81,9 +81,9 @@ export const contactForm: FormDefinition = {
       min: 1,
       minMessage: "Choose at least one way for us to respond.",
     },
-    enquiryTypes: { kind: "multi", label: "Is your query regarding any of the following?", options: SERVICE_OPTIONS },
+    enquiryTypes: { kind: "multi", label: "Is Your Query Regarding Any of the Following?", options: SERVICE_OPTIONS },
     subject: { kind: "text", label: "Subject", max: LIMITS.subject },
-    message: { kind: "text", label: "Your message", max: LIMITS.message },
+    message: { kind: "text", label: "Your Message", max: LIMITS.message },
   },
 };
 
@@ -109,30 +109,30 @@ export const quoteForm: FormDefinition = {
   fields: {
     services: {
       kind: "multi",
-      label: "Services required",
+      label: "Services Required",
       options: SERVICE_OPTIONS,
       min: 1,
       minMessage: "Select at least one service to quote.",
     },
-    strataPlanNumber: { kind: "text", label: "Strata plan number", max: LIMITS.strataPlan },
+    strataPlanNumber: { kind: "text", label: "Strata Plan Number", max: LIMITS.strataPlan },
     numberOfLots: {
       kind: "text",
-      label: "Number of lots",
+      label: "Number of Lots",
       max: LIMITS.lots,
       pattern: /^\d{1,6}$/,
       patternMessage: "Enter the number of lots as a whole number, for example 12.",
     },
-    siteAddress: { kind: "text", label: "Site address", max: LIMITS.address },
-    managerName: { kind: "text", label: "Strata manager name", required: true, max: LIMITS.name },
+    siteAddress: { kind: "text", label: "Site Address", max: LIMITS.address },
+    managerName: { kind: "text", label: "Strata Manager Name", required: true, max: LIMITS.name },
     managerCompany: { kind: "text", label: "Company", required: true, max: LIMITS.company },
-    managerPhone: { kind: "tel", label: "Strata manager phone number" },
-    managerEmail: { kind: "email", label: "Strata manager email", required: true },
-    managerAddress: { kind: "text", label: "Strata manager address", required: true, max: LIMITS.address },
-    siteContactName: { kind: "text", label: "Site contact name", required: true, max: LIMITS.name },
-    siteContactPhone: { kind: "tel", label: "Site contact phone number" },
-    siteContactMobile: { kind: "tel", label: "Site contact mobile number" },
-    siteContactAddress: { kind: "text", label: "Site contact address", required: true, max: LIMITS.address },
-    specialInstructions: { kind: "text", label: "Special instructions", max: LIMITS.instructions },
+    managerPhone: { kind: "tel", label: "Strata Manager Phone Number" },
+    managerEmail: { kind: "email", label: "Strata Manager Email", required: true },
+    managerAddress: { kind: "text", label: "Strata Manager Address", required: true, max: LIMITS.address },
+    siteContactName: { kind: "text", label: "Site Contact Name", required: true, max: LIMITS.name },
+    siteContactPhone: { kind: "tel", label: "Site Contact Phone Number" },
+    siteContactMobile: { kind: "tel", label: "Site Contact Mobile Number" },
+    siteContactAddress: { kind: "text", label: "Site Contact Address", required: true, max: LIMITS.address },
+    specialInstructions: { kind: "text", label: "Special Instructions", max: LIMITS.instructions },
     replyPreference: { kind: "multi", label: "Preference", options: QUOTE_PREFERENCES },
   },
 };
@@ -228,10 +228,10 @@ export interface FormStep {
 }
 
 export const contactSteps: FormStep[] = [
-  { id: "about", title: "About you", intro: "Tell us who you are and how to reach you.", fields: ["name", "email", "phone"] },
+  { id: "about", title: "About You", intro: "Tell us who you are and how to reach you.", fields: ["name", "email", "phone"] },
   {
     id: "enquiry",
-    title: "Your enquiry",
+    title: "Your Enquiry",
     intro: "Let us know what your question is about and how you’d like us to reply.",
     fields: ["enquiryTypes", "subject", "message", "contactPreference"],
   },
@@ -240,13 +240,13 @@ export const contactSteps: FormStep[] = [
 export const quoteSteps: FormStep[] = [
   {
     id: "property",
-    title: "Property and site access",
+    title: "Property and Site Access",
     intro: "Choose the services to quote, tell us about the property, and who can give our valuer access.",
     fields: ["services", "strataPlanNumber", "numberOfLots", "siteAddress", "siteContactName", "siteContactPhone", "siteContactMobile", "siteContactAddress"],
   },
   {
     id: "manager",
-    title: "Strata manager",
+    title: "Strata Manager",
     intro: "Who should we send the quote to? Add any instructions, then check your details.",
     fields: ["managerName", "managerCompany", "managerPhone", "managerEmail", "managerAddress", "specialInstructions", "replyPreference"],
   },

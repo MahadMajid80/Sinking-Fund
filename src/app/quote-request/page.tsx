@@ -11,7 +11,7 @@ export default function QuotePage() {
     <>
       <PageHeader
         trail={["home", "quote"]}
-        title="Request a quote"
+        title="Request a Quote"
         intro={
           <>
             <p>Provide a quotation for the selected service at the property listed below.</p>
@@ -22,13 +22,13 @@ export default function QuotePage() {
       />
       <div className="form-layout">
         <div className="form-layout__main">
-          <h2 className="form-layout__title">Job description</h2>
+          <h2 className="form-layout__title">Job Description</h2>
           <QuoteForm />
         </div>
         <aside className="form-layout__aside">
           <h2>Turnaround</h2>
           <p>Our normal turnaround time is around 3 to 7 business days, and we will beat any competitors written quote by 12%.</p>
-          <h2>Prefer to talk?</h2>
+          <h2>Prefer to Talk?</h2>
           <p className="big-phone">
             <a href={BRAND.phoneHref}>{BRAND.phoneDisplay}</a>
           </p>

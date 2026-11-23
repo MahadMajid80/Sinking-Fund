@@ -20,10 +20,10 @@ export const primaryNav: NavItem[] = [
     id: "services",
     label: "Services",
     links: [
-      { href: routes.biv.path, label: "Building insurance valuation" },
-      { href: routes.sfp.path, label: "Capital works or sinking fund plan" },
-      { href: routes.whs.path, label: "Work health and safety" },
-      { href: routes.asb.path, label: "Asbestos report" },
+      { href: routes.biv.path, label: "Building Insurance Valuation" },
+      { href: routes.sfp.path, label: "Capital Works or Sinking Fund Plan" },
+      { href: routes.whs.path, label: "Work Health and Safety" },
+      { href: routes.asb.path, label: "Asbestos Report" },
     ],
   },
   { href: routes.testimonials.path, label: "Testimonials" },
@@ -31,10 +31,10 @@ export const primaryNav: NavItem[] = [
     id: "faq",
     label: "FAQ",
     links: [
-      { href: routes.faqBiv.path, label: "Building insurance valuation" },
-      { href: routes.faqSfp.path, label: "Capital works or sinking fund plans" },
-      { href: routes.faqWhs.path, label: "Work health and safety" },
-      { href: routes.faqAsb.path, label: "Asbestos reports" },
+      { href: routes.faqBiv.path, label: "Building Insurance Valuation" },
+      { href: routes.faqSfp.path, label: "Capital Works or Sinking Fund Plans" },
+      { href: routes.faqWhs.path, label: "Work Health and Safety" },
+      { href: routes.faqAsb.path, label: "Asbestos Reports" },
     ],
   },
   { href: routes.contact.path, label: "Contact" },
@@ -42,7 +42,7 @@ export const primaryNav: NavItem[] = [
 
 export const footerNav: NavLink[] = [
   { href: routes.legal.path, label: "Legal" },
-  { href: routes.about.path, label: "About us" },
+  { href: routes.about.path, label: "About Us" },
   { href: routes.testimonials.path, label: "Testimonials" },
-  { href: routes.contact.path, label: "Contact us" },
+  { href: routes.contact.path, label: "Contact Us" },
 ];

@@ -63,7 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en-AU" data-scroll-behavior="smooth" className={`${montserrat.variable} ${montserratAccent.variable} ${lato.variable} ${latoItalic.variable}`}>
       <body>
         <a href="#main" className="skip-link">
-          Skip to main content
+          Skip to Main Content
         </a>
         <Header />
         <main id="main" tabIndex={-1}>

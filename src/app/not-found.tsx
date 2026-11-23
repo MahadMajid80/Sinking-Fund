@@ -4,33 +4,33 @@ import { BRAND, routes } from "@/lib/site";
 import { PageHeader } from "@/components/PageParts";
 
 export const metadata: Metadata = {
-  title: { absolute: "Page not found | Sinking Fund" },
+  title: { absolute: "Page Not Found | Sinking Fund" },
   robots: { index: false, follow: true },
 };
 
 export default function NotFound() {
   return (
     <>
-    <PageHeader title="Page not found" intro={<p>This address doesn’t match a page on Sinking Fund. It may have moved when the site was updated.</p>} photo="none" />
+    <PageHeader title="Page Not Found" intro={<p>This address doesn’t match a page on Sinking Fund. It may have moved when the site was updated.</p>} photo="none" />
     <div className="container container--narrow status-page">
       <ul className="status-page__links">
         <li>
-          <Link href="/">Go to the home page</Link>
+          <Link href="/">Go to the Home Page</Link>
         </li>
         <li>
-          <Link href={routes.biv.path}>Building insurance valuation</Link>
+          <Link href={routes.biv.path}>Building Insurance Valuation</Link>
         </li>
         <li>
-          <Link href={routes.sfp.path}>Capital works or sinking fund plan</Link>
+          <Link href={routes.sfp.path}>Capital Works or Sinking Fund Plan</Link>
         </li>
         <li>
-          <Link href={routes.whs.path}>Work health and safety</Link>
+          <Link href={routes.whs.path}>Work Health and Safety</Link>
         </li>
         <li>
-          <Link href={routes.asb.path}>Asbestos report</Link>
+          <Link href={routes.asb.path}>Asbestos Report</Link>
         </li>
         <li>
-          <Link href={routes.contact.path}>Contact us</Link> or call <a href={BRAND.phoneHref}>{BRAND.phoneDisplay}</a>
+          <Link href={routes.contact.path}>Contact Us</Link> or call <a href={BRAND.phoneHref}>{BRAND.phoneDisplay}</a>
         </li>
       </ul>
     </div>

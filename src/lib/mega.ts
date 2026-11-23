@@ -21,23 +21,23 @@ export interface MegaData {
 
 /** Menu titles match the navigation labels. */
 const serviceTitles: Record<ServiceKey, string> = {
-  biv: "Building insurance valuation",
-  sfp: "Capital works or sinking fund plan",
-  whs: "Work health and safety",
-  asb: "Asbestos report",
+  biv: "Building Insurance Valuation",
+  sfp: "Capital Works or Sinking Fund Plan",
+  whs: "Work Health and Safety",
+  asb: "Asbestos Report",
 };
 /** One-line descriptions, condensed from each service's own summary. */
 const serviceLines: Record<ServiceKey, string> = {
-  biv: "Certificates of value for the replacement and reinstatement cost of your buildings.",
+  biv: "Certificates of Value for the replacement and reinstatement cost of your buildings.",
   sfp: "10 and 15 year plans compliant with s80 of the Strata Schemes Management Act.",
-  whs: "Safety reports covering both a duty of care and WHS legislative requirements.",
-  asb: "An asbestos register and an asbestos management plan in one report.",
+  whs: "Safety reports covering both a Duty of Care and WHS legislative requirements.",
+  asb: "An Asbestos Register and an Asbestos Management Plan in one report.",
 };
 const faqTitles: Record<ServiceKey, string> = {
-  biv: "Building insurance valuation FAQs",
-  sfp: "Capital works or sinking fund plan FAQs",
-  whs: "Work health and safety FAQs",
-  asb: "Asbestos report FAQs",
+  biv: "Building Insurance Valuation FAQs",
+  sfp: "Capital Works or Sinking Fund Plan FAQs",
+  whs: "Work Health and Safety FAQs",
+  asb: "Asbestos Report FAQs",
 };
 const faqTopics: Record<ServiceKey, string> = {
   biv: "building insurance valuations",

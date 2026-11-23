@@ -20,13 +20,13 @@ export function FaqTemplate({ service }: { service: ServiceKey }) {
       <PageHeader trail={["home", faqKey]} title={page.title} intro={<p>{page.intro}</p>} mark={s.mark} photo="brick">
         <div className="page-header__actions">
           <Link href={routes[service].path} className="text-link">
-            About our {s.title} service
+            About Our {s.title} Service
           </Link>
         </div>
       </PageHeader>
 
       <div className="container container--narrow faq">
-        <h2 className="visually-hidden">Questions and answers</h2>
+        <h2 className="visually-hidden">Questions and Answers</h2>
         <div className="faq__list">
           {page.faqs.map((f, i) => (
             <details key={f.id} id={f.id} className="faq__item" open={i === 0 ? true : undefined} data-reveal>
@@ -53,7 +53,7 @@ export function FaqTemplate({ service }: { service: ServiceKey }) {
       </div>
 
       <QuoteBand
-        heading={`Ready to order? Request a quote`}
+        heading={`Ready to Order? Request a Quote`}
         body={
           <p>
             Read more about our <Link href={routes[service].path}>{s.title}</Link> service, including what we do when we receive your instructions.

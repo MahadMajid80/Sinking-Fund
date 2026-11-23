@@ -5,7 +5,7 @@ import { HONEYPOT_FIELD, type FieldErrors, type FormDefinition } from "@/lib/for
 import { BRAND } from "@/lib/site";
 import type { Status } from "./useEnquiryForm";
 
-const Req = () => <span className="field__req"> (required)</span>;
+const Req = () => <span className="field__req"> (Required)</span>;
 
 export function TextField({
   id,
@@ -137,7 +137,7 @@ export function CheckboxGroup({
 export function Honeypot() {
   return (
     <div className="hp" aria-hidden="true">
-      <label htmlFor={HONEYPOT_FIELD}>Leave this field empty</label>
+      <label htmlFor={HONEYPOT_FIELD}>Leave This Field Empty</label>
       <input id={HONEYPOT_FIELD} name={HONEYPOT_FIELD} type="text" tabIndex={-1} autoComplete="off" />
     </div>
   );

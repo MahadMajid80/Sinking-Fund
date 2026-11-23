@@ -15,10 +15,10 @@ export function generateStaticParams() {
 }
 
 const quoteHeadings: Record<ServiceKey, string> = {
-  biv: "Request a quote for a building insurance valuation",
-  sfp: "Request a quote for a capital works or sinking fund plan",
-  whs: "Request a quote for a work health and safety report",
-  asb: "Request a quote for an asbestos report",
+  biv: "Request a Quote for a Building Insurance Valuation",
+  sfp: "Request a Quote for a Capital Works or Sinking Fund Plan",
+  whs: "Request a Quote for a Work Health and Safety Report",
+  asb: "Request a Quote for an Asbestos Report",
 };
 
 const isService = (s: string): s is ServiceKey => (serviceKeys as readonly string[]).includes(s);
@@ -42,7 +42,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
       <PageHeader trail={["home", slug]} title={s.title} intro={<p>{s.summary}</p>} mark={s.mark}>
         <div className="page-header__actions">
           <Link href={quoteHref} className="button button--primary">
-            Request a quote for this service <Arrow />
+            Request a Quote for This Service <Arrow />
           </Link>
           <Link href={routes[faqKey].path} className="text-link">
             Read the {faqPages[slug].title}
@@ -54,7 +54,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
         <aside className="article-layout__aside">
           <nav aria-labelledby="toc-title" className="toc">
             <h2 id="toc-title" className="toc__title">
-              On this page
+              On This Page
             </h2>
             <ol>
               {s.sections.map((sec) => (
@@ -65,7 +65,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
             </ol>
           </nav>
           <div className="aside-card">
-            <h2 className="aside-card__title">Questions about this service?</h2>
+            <h2 className="aside-card__title">Questions About This Service?</h2>
             <p>
               <Link href={routes[faqKey].path}>{faqPages[slug].title}</Link>
             </p>

@@ -23,7 +23,7 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <SuccessPanel heading="Message sent" successRef={successRef} reference={reference}>
+      <SuccessPanel heading="Message Sent" successRef={successRef} reference={reference}>
         <p>Thank you. We’ve received your message and will respond using the preference you chose.</p>
         <p>
           If your request is urgent, call <a href={BRAND.phoneHref}>{BRAND.phoneDisplay}</a>.
@@ -46,23 +46,23 @@ export function ContactForm() {
       <NoScriptSteps />
       <Stepper formId="contact" steps={steps} current={step} onGo={goTo} />
       <p id="contact-form-note" className="form-note">
-        Fields marked (required) must be completed.
+        Fields marked (Required) must be completed.
       </p>
       <ErrorSummary def={contactForm} status={status} errors={e} message={message} summaryRef={summaryRef} fieldIds={ids} />
 
       <StepPanel {...panel} index={0} headingRef={headingRef(0)}>
         <div className="form-grid">
-          <TextField id={ids.name} name="name" label="Your name" required autoComplete="name" maxLength={LIMITS.name} error={e.name} />
-          <TextField id={ids.email} name="email" label="Your email" type="email" required autoComplete="email" maxLength={LIMITS.email} error={e.email} />
-          <TextField id={ids.phone} name="phone" label="Your phone number" type="tel" autoComplete="tel" maxLength={LIMITS.phone} error={e.phone} />
+          <TextField id={ids.name} name="name" label="Your Name" required autoComplete="name" maxLength={LIMITS.name} error={e.name} />
+          <TextField id={ids.email} name="email" label="Your Email" type="email" required autoComplete="email" maxLength={LIMITS.email} error={e.email} />
+          <TextField id={ids.phone} name="phone" label="Your Phone Number" type="tel" autoComplete="tel" maxLength={LIMITS.phone} error={e.phone} />
         </div>
         <StepNav index={0} onBack={back} onNext={next} nextLabel={steps[1].title} />
       </StepPanel>
 
       <StepPanel {...panel} index={1} headingRef={headingRef(1)}>
-        <CheckboxGroup id={ids.enquiryTypes} name="enquiryTypes" legend="Is your query regarding any of the following?" options={SERVICE_OPTIONS} columns error={e.enquiryTypes} />
+        <CheckboxGroup id={ids.enquiryTypes} name="enquiryTypes" legend="Is Your Query Regarding Any of the Following?" options={SERVICE_OPTIONS} columns error={e.enquiryTypes} />
         <TextField id={ids.subject} name="subject" label="Subject" maxLength={LIMITS.subject} error={e.subject} />
-        <TextField id={ids.message} name="message" label="Your message" multiline maxLength={LIMITS.message} error={e.message} />
+        <TextField id={ids.message} name="message" label="Your Message" multiline maxLength={LIMITS.message} error={e.message} />
         <CheckboxGroup
           id={ids.contactPreference}
           name="contactPreference"
@@ -78,7 +78,7 @@ export function ContactForm() {
           <button type="button" className="button button--quiet step-nav__back" onClick={back}>
             Back
           </button>
-          <SubmitRow status={status} label="Send message" />
+          <SubmitRow status={status} label="Send Message" />
         </div>
       </StepPanel>
     </form>

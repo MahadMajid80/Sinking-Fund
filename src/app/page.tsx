@@ -20,10 +20,10 @@ const strip = stripIds.map((id) => testimonials.find((t) => t.id === id)!);
 
 /** Facts taken from the source copy (see docs/migration-inventory.md). */
 const facts = [
-  { value: 1984, from: 1960, prefix: "", suffix: "", label: "the year we started valuing properties" },
-  { value: 35, from: 0, prefix: "", suffix: "%+", label: "of NSW strata schemes inspected" },
-  { value: 7, from: 7, prefix: "3–", suffix: "", label: "business day normal turnaround" },
-  { value: 5, from: 0, prefix: "$", suffix: "M", label: "professional indemnity insurance" },
+  { value: 1984, from: 1960, prefix: "", suffix: "", label: "The Year We Started Valuing Properties" },
+  { value: 35, from: 0, prefix: "", suffix: "%+", label: "Of NSW Strata Schemes Inspected" },
+  { value: 7, from: 7, prefix: "3–", suffix: "", label: "Business Day Normal Turnaround" },
+  { value: 5, from: 0, prefix: "$", suffix: "M", label: "Professional Indemnity Insurance" },
 ];
 
 export default function HomePage() {
@@ -43,10 +43,10 @@ export default function HomePage() {
             <p className="hero__lede">Property compliance and valuation</p>
             <div className="hero__actions">
               <Link href={routes.quote.path} className="button button--primary">
-                Request a quote <Arrow />
+                Request a Quote <Arrow />
               </Link>
               <Link href={routes.contact.path} className="button button--outline">
-                Contact us
+                Contact Us
               </Link>
             </div>
             <p className="hero__more">
@@ -100,9 +100,9 @@ export default function HomePage() {
         <div className="container">
           <div className="section-head" data-reveal>
             <h2 id="services-title" className="section-title">
-              Our services
+              Our Services
             </h2>
-            <p>Our clients have the most accurate and practical property reports available, in an easy to read report format.</p>
+            <p>Our clients have the most accurate and practical property reports available, in an Easy to Read Report format.</p>
           </div>
           <ul className="service-grid">
             {homeOrder.map((k) => {
@@ -141,9 +141,9 @@ export default function HomePage() {
           </figure>
           <div className="story__text" data-reveal>
             <h2 id="history-title" className="section-title">
-              A word about us
+              A Word About Us
             </h2>
-            <h3>Our history</h3>
+            <h3>Our History</h3>
             <p>
               Since 1984, we have over 40 years experience in valuing a very wide variety of properties, from carrying out due diligence on the largest property
               transactions in Australia through to the smallest of suburban cottages. We are experts in the presentation of expert evidence in both Federal and State
@@ -164,10 +164,10 @@ export default function HomePage() {
       <section className="voices" aria-labelledby="voices-title">
         <div className="voices__head container" data-reveal>
           <h2 id="voices-title" className="section-title">
-            What clients say
+            What Clients Say
           </h2>
           <Link href={routes.testimonials.path} className="link-arrow">
-            Read all 15 client testimonials <Arrow />
+            Read All 15 Client Testimonials <Arrow />
           </Link>
         </div>
         <Marquee label="Client testimonials">
@@ -193,7 +193,7 @@ export default function HomePage() {
       <QuoteBand
         body={
           <p>
-            Our clients have the most accurate and practical property reports available, in an easy to read report format. Our advice is properly researched in detail,
+            Our clients have the most accurate and practical property reports available, in an Easy to Read Report format. Our advice is properly researched in detail,
             and is simply the best available in the market.
           </p>
         }

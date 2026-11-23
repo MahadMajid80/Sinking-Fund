@@ -77,7 +77,7 @@ export function PageHeader({
 }
 
 /** Closing call to action: a light panel on a soft brand-colour pattern. */
-export function QuoteBand({ heading = "Request a quote", body, href = routes.quote.path }: { heading?: string; body?: ReactNode; href?: string }) {
+export function QuoteBand({ heading = "Request a Quote", body, href = routes.quote.path }: { heading?: string; body?: ReactNode; href?: string }) {
   return (
     <section className="cta-band" aria-labelledby="cta-band-heading">
       <div className="cta-band__inner" data-reveal>
@@ -85,7 +85,7 @@ export function QuoteBand({ heading = "Request a quote", body, href = routes.quo
         {body ? <div className="cta-band__body">{body}</div> : null}
         <div className="cta-band__actions">
           <Link href={href} className="button button--primary">
-            Request a quote <Arrow />
+            Request a Quote <Arrow />
           </Link>
           <a href={BRAND.phoneHref} className="button button--outline">
             Call {BRAND.phoneDisplay}

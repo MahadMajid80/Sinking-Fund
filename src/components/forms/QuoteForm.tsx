@@ -66,7 +66,7 @@ export function QuoteForm() {
       <NoScriptSteps />
       <Stepper formId="quote" steps={steps} current={step} onGo={goTo} />
       <p id="quote-form-note" className="form-note">
-        Fields marked (required) must be completed.
+        Fields marked (Required) must be completed.
       </p>
       <ErrorSummary def={quoteForm} status={status} errors={e} message={message} summaryRef={summaryRef} fieldIds={ids} />
 
@@ -74,7 +74,7 @@ export function QuoteForm() {
         <CheckboxGroup
           id={ids.services}
           name="services"
-          legend="Services required"
+          legend="Services Required"
           hint={preselected ? <p>{preselected} is selected. You can change or add services.</p> : <p>Select every service you’d like quoted.</p>}
           options={SERVICE_OPTIONS}
           required
@@ -84,20 +84,20 @@ export function QuoteForm() {
           onChange={setEdited}
         />
         <fieldset className="form-section">
-          <legend>Job details</legend>
+          <legend>Job Details</legend>
           <div className="form-grid">
-            <TextField id={ids.strataPlanNumber} name="strataPlanNumber" label="Strata plan number" maxLength={LIMITS.strataPlan} error={e.strataPlanNumber} />
-            <TextField id={ids.numberOfLots} name="numberOfLots" label="Number of lots" inputMode="numeric" maxLength={LIMITS.lots} error={e.numberOfLots} />
+            <TextField id={ids.strataPlanNumber} name="strataPlanNumber" label="Strata Plan Number" maxLength={LIMITS.strataPlan} error={e.strataPlanNumber} />
+            <TextField id={ids.numberOfLots} name="numberOfLots" label="Number of Lots" inputMode="numeric" maxLength={LIMITS.lots} error={e.numberOfLots} />
           </div>
-          <TextField id={ids.siteAddress} name="siteAddress" label="Site address" autoComplete="off" maxLength={LIMITS.address} error={e.siteAddress} />
+          <TextField id={ids.siteAddress} name="siteAddress" label="Site Address" autoComplete="off" maxLength={LIMITS.address} error={e.siteAddress} />
         </fieldset>
         <fieldset className="form-section">
-          <legend>Site access contact</legend>
+          <legend>Site Access Contact</legend>
           <p className="form-section__hint">The person who can give our valuer access to the property.</p>
           <div className="form-grid">
             <TextField id={ids.siteContactName} name="siteContactName" label="Name" required autoComplete="off" maxLength={LIMITS.name} error={e.siteContactName} />
-            <TextField id={ids.siteContactPhone} name="siteContactPhone" label="Phone number" type="tel" autoComplete="off" maxLength={LIMITS.phone} error={e.siteContactPhone} />
-            <TextField id={ids.siteContactMobile} name="siteContactMobile" label="Mobile number" type="tel" autoComplete="off" maxLength={LIMITS.phone} error={e.siteContactMobile} />
+            <TextField id={ids.siteContactPhone} name="siteContactPhone" label="Phone Number" type="tel" autoComplete="off" maxLength={LIMITS.phone} error={e.siteContactPhone} />
+            <TextField id={ids.siteContactMobile} name="siteContactMobile" label="Mobile Number" type="tel" autoComplete="off" maxLength={LIMITS.phone} error={e.siteContactMobile} />
           </div>
           <TextField id={ids.siteContactAddress} name="siteContactAddress" label="Address" required autoComplete="off" maxLength={LIMITS.address} error={e.siteContactAddress} />
         </fieldset>
@@ -106,13 +106,13 @@ export function QuoteForm() {
 
       <StepPanel {...panel} index={1} headingRef={headingRef(1)}>
         <div className="form-grid">
-          <TextField id={ids.managerName} name="managerName" label="Strata manager name" required autoComplete="name" maxLength={LIMITS.name} error={e.managerName} />
+          <TextField id={ids.managerName} name="managerName" label="Strata Manager Name" required autoComplete="name" maxLength={LIMITS.name} error={e.managerName} />
           <TextField id={ids.managerCompany} name="managerCompany" label="Company" required autoComplete="organization" maxLength={LIMITS.company} error={e.managerCompany} />
-          <TextField id={ids.managerPhone} name="managerPhone" label="Phone number" type="tel" autoComplete="tel" maxLength={LIMITS.phone} error={e.managerPhone} />
+          <TextField id={ids.managerPhone} name="managerPhone" label="Phone Number" type="tel" autoComplete="tel" maxLength={LIMITS.phone} error={e.managerPhone} />
           <TextField id={ids.managerEmail} name="managerEmail" label="Email" type="email" required autoComplete="email" maxLength={LIMITS.email} error={e.managerEmail} />
         </div>
         <TextField id={ids.managerAddress} name="managerAddress" label="Address" required autoComplete="street-address" maxLength={LIMITS.address} error={e.managerAddress} />
-        <TextField id={ids.specialInstructions} name="specialInstructions" label="Special instructions" multiline rows={5} maxLength={LIMITS.instructions} error={e.specialInstructions} />
+        <TextField id={ids.specialInstructions} name="specialInstructions" label="Special Instructions" multiline rows={5} maxLength={LIMITS.instructions} error={e.specialInstructions} />
         <CheckboxGroup id={ids.replyPreference} name="replyPreference" legend="Preference" hint="How would you like us to reply?" options={QUOTE_PREFERENCES} error={e.replyPreference} />
         {step === last ? <StepReview formId="quote" def={quoteForm} steps={steps} values={review} onEdit={goTo} /> : null}
         <Honeypot />
@@ -120,7 +120,7 @@ export function QuoteForm() {
           <button type="button" className="button button--quiet step-nav__back" onClick={back}>
             Back
           </button>
-          <SubmitRow status={status} label="Send quote request" />
+          <SubmitRow status={status} label="Send Quote Request" />
         </div>
       </StepPanel>
     </form>

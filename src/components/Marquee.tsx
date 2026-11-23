@@ -21,7 +21,7 @@ export function Marquee({ children, label }: { children: ReactNode; label: strin
       </div>
       <button type="button" className="marquee__toggle" aria-pressed={paused} onClick={() => setPaused((p) => !p)}>
         <span className={paused ? "icon-play" : "icon-pause"} aria-hidden="true" />
-        {paused ? "Play testimonials" : "Pause testimonials"}
+        {paused ? "Play testimonials" : "Pause Testimonials"}
       </button>
     </div>
   );

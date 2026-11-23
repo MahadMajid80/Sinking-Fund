@@ -64,7 +64,7 @@ function ServicesPanel({ data, pathname, onNavigate }: { data: MegaData; pathnam
       tiles={data.services}
       pathname={pathname}
       onNavigate={onNavigate}
-      action={{ href: routes.quote.path, title: "Request a quote", text: "Tell us about the property and the reports you need." }}
+      action={{ href: routes.quote.path, title: "Request a Quote", text: "Tell us about the property and the reports you need." }}
     />
   );
 }
@@ -75,7 +75,7 @@ function FaqPanel({ data, pathname, onNavigate }: { data: MegaData; pathname: st
       tiles={data.faq}
       pathname={pathname}
       onNavigate={onNavigate}
-      action={{ href: routes.contact.path, title: "Ask us a question", text: `Send a message or call ${BRAND.phoneDisplay.replace(/ /g, "\u00a0")}.` }}
+      action={{ href: routes.contact.path, title: "Ask Us a Question", text: `Send a message or call ${BRAND.phoneDisplay.replace(/ /g, "\u00a0")}.` }}
     />
   );
 }

@@ -90,7 +90,7 @@ export function StepNav({ index, onBack, onNext, nextLabel }: { index: number; o
       ) : null}
       <button type="button" className="button button--primary step-nav__next" onClick={onNext}>
         <span>
-          Continue<span className="step-nav__to"> to {nextLabel.toLowerCase()}</span>
+          Continue<span className="step-nav__to"> to {nextLabel}</span>
         </span>
       </button>
     </div>
