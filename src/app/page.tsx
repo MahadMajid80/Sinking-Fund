@@ -21,7 +21,7 @@ const strip = stripIds.map((id) => testimonials.find((t) => t.id === id)!);
 /** Facts taken from the source copy (see docs/migration-inventory.md). */
 const facts = [
   { value: 1984, from: 1960, prefix: "", suffix: "", label: "the year we started valuing properties" },
-  { value: 20, from: 0, prefix: "", suffix: "%+", label: "of NSW strata schemes inspected" },
+  { value: 35, from: 0, prefix: "", suffix: "%+", label: "of NSW strata schemes inspected" },
   { value: 7, from: 7, prefix: "3–", suffix: "", label: "business day normal turnaround" },
   { value: 5, from: 0, prefix: "$", suffix: "M", label: "professional indemnity insurance" },
 ];
@@ -145,9 +145,9 @@ export default function HomePage() {
             </h2>
             <h3>Our History</h3>
             <p>
-              Since 1984, we have over 30 years experience in valuing a very wide variety of properties, from carrying out due diligence on the largest property
+              Since 1984, we have over 40 years experience in valuing a very wide variety of properties, from carrying out due diligence on the largest property
               transactions in Australia through to the smallest of suburban cottages. We are experts in the presentation of expert evidence in both Federal and State
-              Court systems. We have particular expertise in strata property having inspected over 20% of the strata schemes in New South Wales.
+              Court systems. We have particular expertise in strata property having inspected over 35% of the strata schemes in New South Wales.
             </p>
             <p className="link-row">
               <Link href={routes.about.path} className="link-arrow">

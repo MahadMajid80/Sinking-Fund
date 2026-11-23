@@ -34,9 +34,9 @@ export default function AboutPage() {
           <div className="prose">
             <h2 id="history-h">Our History</h2>
             <p>
-              Since 1984, we have over 30 years experience in valuing a very wide variety of properties, from carrying out due diligence on the largest property
+              Since 1984, we have over 40 years experience in valuing a very wide variety of properties, from carrying out due diligence on the largest property
               transactions in Australia through to the smallest of suburban cottages. We are experts in the presentation of expert evidence in both Federal and State Court
-              systems. We have particular expertise in strata property having inspected over 20% of the strata schemes in New South Wales.
+              systems. We have particular expertise in strata property having inspected over 35% of the strata schemes in New South Wales.
             </p>
           </div>
           <figure className="about-history__media" data-reveal>
