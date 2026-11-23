@@ -18,16 +18,16 @@ export default function NotFound() {
           <Link href="/">Go to the home page</Link>
         </li>
         <li>
-          <Link href={routes.biv.path}>Building Insurance Valuation</Link>
+          <Link href={routes.biv.path}>Building insurance valuation</Link>
         </li>
         <li>
-          <Link href={routes.sfp.path}>Capital Works or Sinking Fund Plan</Link>
+          <Link href={routes.sfp.path}>Capital works or sinking fund plan</Link>
         </li>
         <li>
-          <Link href={routes.whs.path}>Work Health and Safety</Link>
+          <Link href={routes.whs.path}>Work health and safety</Link>
         </li>
         <li>
-          <Link href={routes.asb.path}>Asbestos Report</Link>
+          <Link href={routes.asb.path}>Asbestos report</Link>
         </li>
         <li>
           <Link href={routes.contact.path}>Contact us</Link> or call <a href={BRAND.phoneHref}>{BRAND.phoneDisplay}</a>

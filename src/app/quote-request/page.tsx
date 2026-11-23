@@ -11,7 +11,7 @@ export default function QuotePage() {
     <>
       <PageHeader
         trail={["home", "quote"]}
-        title="Request a Quote"
+        title="Request a quote"
         intro={
           <>
             <p>Provide a quotation for the selected service at the property listed below.</p>
@@ -22,7 +22,7 @@ export default function QuotePage() {
       />
       <div className="form-layout">
         <div className="form-layout__main">
-          <h2 className="form-layout__title">Job Description</h2>
+          <h2 className="form-layout__title">Job description</h2>
           <QuoteForm />
         </div>
         <aside className="form-layout__aside">

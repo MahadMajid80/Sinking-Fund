@@ -6,13 +6,13 @@
 
 /** The seven original service labels, verbatim from both Contact Form 7 forms. */
 export const SERVICE_OPTIONS = [
-  { value: "biv", label: "Building Insurance Valuation" },
-  { value: "asbestos", label: "Asbestos Report" },
-  { value: "whs", label: "WHS Report" },
-  { value: "ohs-vic", label: "OHS Report (VIC)" },
-  { value: "window-safety", label: "Window Safety Report" },
-  { value: "sfp", label: "Sinking Fund Plan" },
-  { value: "maintenance-plan-vic", label: "Maintenance Plan (VIC)" },
+  { value: "biv", label: "Building insurance valuation" },
+  { value: "asbestos", label: "Asbestos report" },
+  { value: "whs", label: "WHS report" },
+  { value: "ohs-vic", label: "OHS report (VIC)" },
+  { value: "window-safety", label: "Window safety report" },
+  { value: "sfp", label: "Sinking fund plan" },
+  { value: "maintenance-plan-vic", label: "Maintenance plan (VIC)" },
 ] as const;
 export type ServiceValue = (typeof SERVICE_OPTIONS)[number]["value"];
 

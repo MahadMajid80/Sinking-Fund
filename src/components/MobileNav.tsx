@@ -84,7 +84,7 @@ export function MobileNav() {
           </nav>
           <div className="drawer__actions">
             <Link href={routes.quote.path} className="button button--primary">
-              Request a Quote
+              Request a quote
             </Link>
             <a href={BRAND.phoneHref} className="button button--quiet">
               Call {BRAND.phoneDisplay}

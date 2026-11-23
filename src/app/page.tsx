@@ -43,7 +43,7 @@ export default function HomePage() {
             <p className="hero__lede">Property compliance and valuation</p>
             <div className="hero__actions">
               <Link href={routes.quote.path} className="button button--primary">
-                Request a Quote <Arrow />
+                Request a quote <Arrow />
               </Link>
               <Link href={routes.contact.path} className="button button--outline">
                 Contact us
@@ -102,7 +102,7 @@ export default function HomePage() {
             <h2 id="services-title" className="section-title">
               Our services
             </h2>
-            <p>Our clients have the most accurate and practical property reports available, in an Easy to Read Report format.</p>
+            <p>Our clients have the most accurate and practical property reports available, in an easy to read report format.</p>
           </div>
           <ul className="service-grid">
             {homeOrder.map((k) => {
@@ -143,7 +143,7 @@ export default function HomePage() {
             <h2 id="history-title" className="section-title">
               A word about us
             </h2>
-            <h3>Our History</h3>
+            <h3>Our history</h3>
             <p>
               Since 1984, we have over 40 years experience in valuing a very wide variety of properties, from carrying out due diligence on the largest property
               transactions in Australia through to the smallest of suburban cottages. We are experts in the presentation of expert evidence in both Federal and State
@@ -193,7 +193,7 @@ export default function HomePage() {
       <QuoteBand
         body={
           <p>
-            Our clients have the most accurate and practical property reports available, in an Easy to Read Report format. Our advice is properly researched in detail,
+            Our clients have the most accurate and practical property reports available, in an easy to read report format. Our advice is properly researched in detail,
             and is simply the best available in the market.
           </p>
         }

@@ -15,10 +15,10 @@ export function generateStaticParams() {
 }
 
 const quoteHeadings: Record<ServiceKey, string> = {
-  biv: "Request a quote for a Building Insurance Valuation",
-  sfp: "Request a quote for a Capital Works or Sinking Fund Plan",
-  whs: "Request a quote for a Work Health and Safety Report",
-  asb: "Request a quote for an Asbestos Report",
+  biv: "Request a quote for a building insurance valuation",
+  sfp: "Request a quote for a capital works or sinking fund plan",
+  whs: "Request a quote for a work health and safety report",
+  asb: "Request a quote for an asbestos report",
 };
 
 const isService = (s: string): s is ServiceKey => (serviceKeys as readonly string[]).includes(s);

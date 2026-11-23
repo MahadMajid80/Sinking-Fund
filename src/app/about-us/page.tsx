@@ -32,7 +32,7 @@ export default function AboutPage() {
       <section className="about-history" aria-labelledby="history-h">
         <div className="about-history__inner">
           <div className="prose">
-            <h2 id="history-h">Our History</h2>
+            <h2 id="history-h">Our history</h2>
             <p>
               Since 1984, we have over 40 years experience in valuing a very wide variety of properties, from carrying out due diligence on the largest property
               transactions in Australia through to the smallest of suburban cottages. We are experts in the presentation of expert evidence in both Federal and State Court
@@ -55,7 +55,7 @@ export default function AboutPage() {
       <section className="values" aria-labelledby="values-h">
         <div className="container">
           <h2 id="values-h" className="section-title">
-            Our Values
+            Our values
           </h2>
           <dl className="values__list">
             {values.map((v) => (
@@ -71,12 +71,12 @@ export default function AboutPage() {
       <section className="vision" aria-label="Vision and mission">
         <div className="container vision__grid">
           <div>
-            <h2>Our Vision</h2>
-            <p>Our clients have the most accurate and practical property reports available, in an Easy to Read Report format.</p>
+            <h2>Our vision</h2>
+            <p>Our clients have the most accurate and practical property reports available, in an easy to read report format.</p>
             <p>Our advice is properly researched in detail, and is simply the best available in the market.</p>
           </div>
           <div>
-            <h2>Our Mission</h2>
+            <h2>Our mission</h2>
             <p>Our mission starts with our clients, by simply making their work easier and enjoyable.</p>
             <p>We work together with our clients to achieve a positive and rewarding outcome.</p>
           </div>

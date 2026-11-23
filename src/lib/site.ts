@@ -56,7 +56,7 @@ export interface RouteInfo {
 export const routes: Record<RouteKey, RouteInfo> = {
   home: {
     path: "/",
-    title: "Property Compliance & Valuations | Sinking Fund",
+    title: "Property compliance & valuations | Sinking Fund",
     description:
       "Building insurance valuations, capital works and sinking fund plans, strata WHS reports and asbestos registers for owners corporations and strata managers.",
     label: "Home",
@@ -73,79 +73,79 @@ export const routes: Record<RouteKey, RouteInfo> = {
   },
   biv: {
     path: "/services/biv/",
-    title: "Building Insurance Valuation Services | Sinking Fund",
+    title: "Building insurance valuation Services | Sinking Fund",
     description:
-      "Building insurance valuations and Certificates of Value for strata and community schemes, prepared by a Registered Valuer. Turnaround around 3 to 7 business days.",
-    label: "Building Insurance Valuation",
+      "Building insurance valuations and certificates of value for strata and community schemes, prepared by a Registered Valuer. Turnaround around 3 to 7 business days.",
+    label: "Building insurance valuation",
     source: "services/biv/index.html",
     wpId: 3835,
   },
   sfp: {
     path: "/services/sfp/",
-    title: "Capital Works & Sinking Fund Plans | Sinking Fund",
+    title: "Capital works & sinking fund plans | Sinking Fund",
     description:
       "10 and 15 year capital works fund plans, sinking fund plans and maintenance fund plans for owners corporations, with photos and easy to read reports.",
-    label: "Capital Works or Sinking Fund Plan",
+    label: "Capital works or sinking fund plan",
     source: "services/sfp/index.html",
     wpId: 3841,
   },
   whs: {
     path: "/services/whs/",
-    title: "Work Health & Safety Reports | Sinking Fund",
+    title: "Work Health & safety reports | Sinking Fund",
     description:
       "Strata WHS reports and safety reports (OHS reports in Victoria) that identify hazards and include a risk assessment for each one, with colour photographs.",
-    label: "Work Health and Safety",
+    label: "Work health and safety",
     source: "services/whs/index.html",
     wpId: 3837,
   },
   asb: {
     path: "/services/asb/",
-    title: "Asbestos Register & Management Plan Reports | Sinking Fund",
+    title: "Asbestos register & management plan Reports | Sinking Fund",
     description:
-      "Asbestos Reports that include both an asbestos register and an asbestos management plan, with a risk assessment and photographs of each identified item.",
-    label: "Asbestos Report",
+      "Asbestos reports that include both an asbestos register and an asbestos management plan, with a risk assessment and photographs of each identified item.",
+    label: "Asbestos report",
     source: "services/asb/index.html",
     wpId: 3839,
   },
   faqBiv: {
     path: "/building-insurance-valuation/",
-    title: "Building Insurance Valuation FAQs | Sinking Fund",
+    title: "Building insurance valuation FAQs | Sinking Fund",
     description:
       "Answers to common questions about building insurance valuations: what they include, who needs one, and how often a valuation should be reviewed.",
-    label: "Building Insurance Valuation",
+    label: "Building insurance valuation",
     source: "building-insurance-valuation/index.html",
     wpId: 3891,
   },
   faqSfp: {
     path: "/sinking-fund-plans/",
-    title: "Capital Works & Sinking Fund Plan FAQs | Sinking Fund",
+    title: "Capital works & sinking fund plan FAQs | Sinking Fund",
     description:
       "Answers to common questions about capital works and sinking fund plans: what they are, why owners need one, and how often a plan should be reviewed.",
-    label: "Capital Works or Sinking Fund Plans",
+    label: "Capital works or sinking fund plans",
     source: "sinking-fund-plans/index.html",
     wpId: 3893,
   },
   faqWhs: {
     path: "/work-health-and-safety/",
-    title: "Work Health & Safety Report FAQs | Sinking Fund",
+    title: "Work Health & safety report FAQs | Sinking Fund",
     description:
       "Answers to common questions about work health and safety inspections for strata and property owners, including duty of care and re-inspection cycles.",
-    label: "Work Health and Safety",
+    label: "Work health and safety",
     source: "work-health-and-safety/index.html",
     wpId: 3895,
   },
   faqAsb: {
     path: "/asbestos-reports/",
-    title: "Asbestos Report FAQs | Sinking Fund",
+    title: "Asbestos report FAQs | Sinking Fund",
     description:
       "Answers to common questions about asbestos reports, asbestos registers and asbestos management plans, including fees, variations and annual reviews.",
-    label: "Asbestos Reports",
+    label: "Asbestos reports",
     source: "asbestos-reports/index.html",
     wpId: 3897,
   },
   testimonials: {
     path: "/testimonials/",
-    title: "Client Testimonials | Sinking Fund",
+    title: "Client testimonials | Sinking Fund",
     description:
       "What strata managers, real estate agents and owners corporations say about our sinking fund plans, building insurance valuations and reports.",
     label: "Testimonials",
@@ -163,10 +163,10 @@ export const routes: Record<RouteKey, RouteInfo> = {
   },
   quote: {
     path: "/quote-request/",
-    title: "Request a Property Services Quote | Sinking Fund",
+    title: "Request a property services quote | Sinking Fund",
     description:
       "Request a quote for a building insurance valuation, sinking fund plan, maintenance plan, WHS, OHS, window safety or asbestos report.",
-    label: "Request a Quote",
+    label: "Request a quote",
     source: "quote-request/index.html",
     wpId: 4493,
   },

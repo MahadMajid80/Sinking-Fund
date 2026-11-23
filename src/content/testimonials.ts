@@ -23,7 +23,7 @@ export const testimonials: Testimonial[] = [
     id: "bryan",
     quote:
       "The BIV Reports we receive are clear, concise and of the highest quality. I use BIV Reports for all of my necessary Reports and wouldn’t go anywhere else. Their back office is a pleasure to deal with and their prices are excellent. I have no hesitation in recommending their services.",
-    attribution: "Bryan Owners Corporation Manager - Tideways",
+    attribution: "Bryan owners corporation Manager - Tideways",
     name: "Bryan",
   },
   {

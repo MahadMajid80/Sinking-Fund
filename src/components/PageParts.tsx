@@ -85,7 +85,7 @@ export function QuoteBand({ heading = "Request a quote", body, href = routes.quo
         {body ? <div className="cta-band__body">{body}</div> : null}
         <div className="cta-band__actions">
           <Link href={href} className="button button--primary">
-            Request a Quote <Arrow />
+            Request a quote <Arrow />
           </Link>
           <a href={BRAND.phoneHref} className="button button--outline">
             Call {BRAND.phoneDisplay}

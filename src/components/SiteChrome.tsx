@@ -39,7 +39,7 @@ export function Header() {
             <span className="phone-link__number">{BRAND.phoneDisplay}</span>
           </a>
           <Link href={routes.quote.path} className="button button--primary button--small site-header__cta">
-            Request a Quote
+            Request a quote
           </Link>
           <MobileNav />
         </div>
@@ -64,7 +64,7 @@ export function Footer() {
             {BRAND.phoneDisplay}
           </a>
           <Link href={routes.quote.path} className="button button--primary">
-            Request a Quote <Arrow />
+            Request a quote <Arrow />
           </Link>
         </div>
         {[services, faqs].map((group) =>

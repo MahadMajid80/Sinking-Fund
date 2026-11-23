@@ -84,7 +84,7 @@ export function QuoteForm() {
           onChange={setEdited}
         />
         <fieldset className="form-section">
-          <legend>Job Details</legend>
+          <legend>Job details</legend>
           <div className="form-grid">
             <TextField id={ids.strataPlanNumber} name="strataPlanNumber" label="Strata plan number" maxLength={LIMITS.strataPlan} error={e.strataPlanNumber} />
             <TextField id={ids.numberOfLots} name="numberOfLots" label="Number of lots" inputMode="numeric" maxLength={LIMITS.lots} error={e.numberOfLots} />
@@ -112,7 +112,7 @@ export function QuoteForm() {
           <TextField id={ids.managerEmail} name="managerEmail" label="Email" type="email" required autoComplete="email" maxLength={LIMITS.email} error={e.managerEmail} />
         </div>
         <TextField id={ids.managerAddress} name="managerAddress" label="Address" required autoComplete="street-address" maxLength={LIMITS.address} error={e.managerAddress} />
-        <TextField id={ids.specialInstructions} name="specialInstructions" label="Special Instructions" multiline rows={5} maxLength={LIMITS.instructions} error={e.specialInstructions} />
+        <TextField id={ids.specialInstructions} name="specialInstructions" label="Special instructions" multiline rows={5} maxLength={LIMITS.instructions} error={e.specialInstructions} />
         <CheckboxGroup id={ids.replyPreference} name="replyPreference" legend="Preference" hint="How would you like us to reply?" options={QUOTE_PREFERENCES} error={e.replyPreference} />
         {step === last ? <StepReview formId="quote" def={quoteForm} steps={steps} values={review} onEdit={goTo} /> : null}
         <Honeypot />
