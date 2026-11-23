@@ -193,6 +193,11 @@ export function DesktopNav({ mega }: { mega: MegaData }) {
   return (
     <nav className="nav" aria-label="Main">
       <ul className="nav__list">
+        <li className="nav__item">
+          <Link href="/" className="nav__link" aria-current={pathname === "/" ? "page" : undefined}>
+            Home
+          </Link>
+        </li>
         {primaryNav.map((item) =>
           isGroup(item) ? (
             <MegaDisclosure

@@ -38,7 +38,7 @@ export default function HomePage() {
               {BRAND.company}
             </p>
             <h1 id="hero-title" className="hero__title">
-              <span className="hero__title-lead">Welcome to</span> <span className="hero__title-name">Sinking Fund</span>
+              <span className="hero__title-lead">Welcome to</span> <span className="hero__title-name">Sinking Fund Plan</span>
             </h1>
             <p className="hero__lede">Property compliance and valuation</p>
             <div className="hero__actions">
