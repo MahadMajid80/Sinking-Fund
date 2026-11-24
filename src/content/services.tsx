@@ -287,17 +287,17 @@ export const services: Record<ServiceKey, ServiceContent> = {
         heading: "Points of Consideration",
         body: (
           <ul className="list-columns">
-            <li>Independent unbiased advice</li>
-            <li>Avoid unnecessary Special Levies</li>
-            <li>User pays</li>
-            <li>A fairer system</li>
-            <li>Adds value - building well maintained and large Sinking Fund balance</li>
-            <li>Legal requirement to maintain common property</li>
-            <li>Good practice</li>
-            <li>Saves owners and strata managers time</li>
-            <li>Professionally carried out</li>
+            <li>Independent Unbiased Advice</li>
+            <li>Avoid Unnecessary Special Levies</li>
+            <li>User Pays</li>
+            <li>A Fairer System</li>
+            <li>Adds Value - Building Well Maintained and Large Sinking Fund Balance</li>
+            <li>Legal Requirement to Maintain Common Property</li>
+            <li>Good Practice</li>
+            <li>Saves Owners and Strata Managers Time</li>
+            <li>Professionally Carried Out</li>
             <li>Risk Transfer - we have $5M Professional Indemnity insurance for the Sinking Fund Plan</li>
-            <li>Addresses latent and unforseen costs</li>
+            <li>Addresses Latent and Unforseen Costs</li>
           </ul>
         ),
       },
@@ -623,7 +623,7 @@ export const services: Record<ServiceKey, ServiceContent> = {
             </p>
             <div className="table-scroll" role="region" aria-labelledby="fines-caption" tabIndex={0}>
               <table className="data-table">
-                <caption id="fines-caption">Maximum penalties by category of offence</caption>
+                <caption id="fines-caption">Maximum Penalties by Category of Offence</caption>
                 <thead>
                   <tr>
                     <th scope="col">Category of the Offence</th>

@@ -93,7 +93,7 @@ export const faqPages: Record<ServiceKey, FaqPage> = {
             <p>It depends on the type of property. In our opinion the following is a reasonable guide to a minimum frequency for obtaining revaluations.</p>
             <div className="table-scroll" role="region" aria-labelledby="revaluation-caption" tabIndex={0}>
               <table className="data-table data-table--compact">
-                <caption id="revaluation-caption">Suggested minimum revaluation frequency</caption>
+                <caption id="revaluation-caption">Suggested Minimum Revaluation Frequency</caption>
                 <thead>
                   <tr>
                     <th scope="col">Property Type</th>
@@ -104,55 +104,55 @@ export const faqPages: Record<ServiceKey, FaqPage> = {
                   <tr>
                     <th scope="row">Lot 1 in Most Community Schemes</th>
                     <td>
-                      <em>Each 5 years</em>
+                      <em>Each 5 Years</em>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">If Lot 1 Includes Major Improvements Sheds, Cabana, Pool, Recreation Hall, Community Hall, Bbq Areas, Then</th>
                     <td>
-                      <em>Each 2-3 years</em>
+                      <em>Each 2-3 Years</em>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">Three Level Walk up (12 and 18 Packs)</th>
                     <td>
-                      <em>Each 2-3 years</em>
+                      <em>Each 2-3 Years</em>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">Villas, Townhouses and the Like</th>
                     <td>
-                      <em>Each 2-3 years</em>
+                      <em>Each 2-3 Years</em>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">Six Level and More Schemes (Residential or Other)</th>
                     <td>
-                      <em>Each year</em>
+                      <em>Each Year</em>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">Industrial Office Warehouses - Old</th>
                     <td>
-                      <em>Each 1-2 years</em>
+                      <em>Each 1-2 Years</em>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">Industrial Office Warehouses - New</th>
                     <td>
-                      <em>Each 2-3 years</em>
+                      <em>Each 2-3 Years</em>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">Commercial Office Buildings - Large</th>
                     <td>
-                      <em>Each 1-2 years</em>
+                      <em>Each 1-2 Years</em>
                     </td>
                   </tr>
                   <tr>
                     <th scope="row">Commercial Office Buildings - Small</th>
                     <td>
-                      <em>Each 2-3 years</em>
+                      <em>Each 2-3 Years</em>
                     </td>
                   </tr>
                 </tbody>

@@ -16,7 +16,7 @@ export function Preloader() {
           <path className="pl-d pl-d3" d="M73 27 96 50 73 73 50 50Z" fill="#e7c733" />
           <path className="pl-d pl-d4" d="M50 50 73 73 50 96 27 73Z" fill="#cc222e" />
         </svg>
-        <span className="preloader__word">Sinking Fund</span>
+        <span className="preloader__word">Sinking Fund Plan</span>
         <span className="preloader__bar" />
       </div>
     </div>

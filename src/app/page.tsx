@@ -75,7 +75,7 @@ export default function HomePage() {
               <Image src="/images/marks/brand.png" alt="" width={22} height={25} />
               <span>
                 <strong>Registered Valuers</strong>
-                since 1984
+                Since 1984
               </span>
             </div>
           </figure>
