@@ -108,7 +108,7 @@ export const faqPages: Record<ServiceKey, FaqPage> = {
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">If Lot 1 Includes Major Improvements Sheds, Cabana, Pool, Recreation Hall, Community Hall, Bbq Areas, Then</th>
+                    <th scope="row">If Lot 1 includes major improvements (sheds, cabana, pool, recreation hall, community hall, BBQ areas), then</th>
                     <td>
                       <em>Each 2-3 Years</em>
                     </td>
