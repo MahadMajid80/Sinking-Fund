@@ -137,11 +137,8 @@ export function useEnquiryForm(def: FormDefinition, endpoint: string, steps: For
     const clientErrors = validate(def, normalise(def, data));
     const errorStep = firstStepWithError(steps, clientErrors);
     if (errorStep >= 0) return showStepErrors(errorStep, clientErrors);
-    if (captchaWidget.current !== null && !data["g-recaptcha-response"]) {
-      setCaptchaError("Tick “I’m not a robot” to send your details.");
-      document.getElementById(`${def.id}-captcha`)?.focus();
-      return;
-    }
+    // No client-side block on an unticked box: the server decides (it only requires the tick once
+    // RECAPTCHA_CHECKBOX_SECRET_KEY is set), so a box Google cannot draw never stops a real enquiry.
     setCaptchaError("");
     setErrors({});
     setMessage("");
