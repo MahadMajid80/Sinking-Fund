@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { PageHeader, QuoteBand } from "./PageParts";
+import { JsonLd, PageHeader, QuoteBand } from "./PageParts";
+import faqSchema from "@/content/faq-schema.json";
 import { faqPages } from "@/content/faqs";
 import { services } from "@/content/services";
 import { SERVICE_PAGE_TO_OPTION } from "@/lib/forms/schema";
@@ -7,7 +8,7 @@ import { routes, serviceFaq, serviceKeys, type ServiceKey } from "@/lib/site";
 
 /**
  * FAQ page: native <details>/<summary> so every answer is in the initial HTML and works
- * without JavaScript. No FAQPage schema is emitted (not a rich-result target).
+ * without JavaScript. FAQPage schema comes from content/faq-schema.json (the same questions and answers as plain text).
  */
 export function FaqTemplate({ service }: { service: ServiceKey }) {
   const page = faqPages[service];
@@ -15,8 +16,15 @@ export function FaqTemplate({ service }: { service: ServiceKey }) {
   const faqKey = serviceFaq[service];
   const quoteHref = `${routes.quote.path}?service=${SERVICE_PAGE_TO_OPTION[service]}`;
 
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqSchema[service].map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  };
+
   return (
     <>
+      <JsonLd data={faqLd} />
       <PageHeader trail={["home", faqKey]} title={page.title} intro={<p>{page.intro}</p>} mark={s.mark} photo="brick">
         <div className="page-header__actions">
           <Link href={routes[service].path} className="text-link">

@@ -167,7 +167,7 @@ export const faqPages: Record<ServiceKey, FaqPage> = {
   sfp: {
     service: "sfp",
     title: "Capital Works or Sinking Fund Plan FAQs",
-    intro: "Six common questions about capital works and sinking fund plans for owners corporations.",
+    intro: "Seven common questions about capital works and sinking fund plans for owners corporations.",
     faqs: [
       {
         id: "what-is-a-plan",
@@ -189,6 +189,16 @@ export const faqPages: Record<ServiceKey, FaqPage> = {
             required by law to have a 10-year sinking fund plan in place as defined in the Strata Schemes Management Act 1996. The 10-year plan must be approved by owners
             at an Annual General Meeting (AGM) and must be reviewed and adjusted, if required, each five years.
           </p>
+        ),
+      },
+      {
+        id: "nsw-2026-changes",
+        question: "What Changed for NSW Capital Works Fund Plans in 2026?",
+        answer: (
+          <>
+            <p>From 1 April 2026, NSW owners corporations must use the standard form when they revise their 10-year capital works fund plan, or replace a plan that has been in place for 10 years. The plan must still be reviewed at least every 5 years.</p>
+            <p>NSW Fair Trading also offers a free capital works fund planner on the NSW Strata Hub, aimed mainly at small schemes. Larger or more complex schemes often engage a specialist to prepare the plan. Request a quote and we can prepare or review yours.</p>
+          </>
         ),
       },
       {
