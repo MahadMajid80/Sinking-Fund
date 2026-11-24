@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 /** Public site key (safe to publish). The secret key lives only in the hosting environment. */
-export const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6Ldc-SkuAAAAAAoB7iEzNKL13V30nXvy5EccYQIz";
+export const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6LcufjAuAAAAAIVAEpiusz4KimiGlIvQ64mMCaCW";
 
 type Grecaptcha = {
   render: (el: HTMLElement, opts: Record<string, unknown>) => number;
