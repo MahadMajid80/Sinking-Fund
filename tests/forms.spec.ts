@@ -252,7 +252,12 @@ test.describe("quote form", () => {
     expect(f["Site contact phone number"]).toBe("02 2222 2222");
     expect(f["Site contact mobile number"]).toBe("0433 333 333");
     expect(f["Preference"]).toBe("Email Back");
-    expect(m.html).toContain("<th align=\"left\" valign=\"top\" style=\"border-bottom:1px solid #ddd;width:220px\">Site Contact Mobile Number</th><td style=\"border-bottom:1px solid #ddd;white-space:pre-wrap\">0433 333 333</td>");
+    // Branded layout (same as BIV Reports): logo, heading, service chips, panels, Reply / Call buttons.
+    expect(m.html).toContain('src="cid:sf-logo"');
+    expect(m.html).toContain(">Site Access</td>");
+    expect(m.html).toContain('href="tel:0433333333"');
+    expect(m.html).toMatch(/>Reply to [^<]+<\/a>/);
+    expect(m.attachments).toEqual([{ filename: "sinking-fund-logo.png", cid: "sf-logo", bytes: expect.any(Number) }]);
   });
 
   test("a server-side error on the first step returns there", async ({ page }) => {

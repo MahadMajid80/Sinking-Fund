@@ -11,6 +11,7 @@ export interface MockMail {
   subject: string;
   text: string;
   html: string;
+  attachments?: { filename: string; cid: string; bytes: number }[];
   reference: string;
   form: string;
 }

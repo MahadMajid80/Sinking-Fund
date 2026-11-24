@@ -12,6 +12,7 @@ import {
   validate,
 } from "@/lib/forms/schema";
 import { recipientsFor, sendMail } from "./mail";
+import { renderEmail } from "./email-template";
 import { checkRateLimit } from "./rate-limit";
 import { verifyRecaptcha } from "./recaptcha";
 
@@ -37,34 +38,6 @@ function clientIp(req: Request): string {
   const fwd = req.headers.get("x-forwarded-for");
   if (fwd) return fwd.split(",")[0].trim();
   return req.headers.get("x-real-ip") ?? "unknown";
-}
-
-function escapeHtml(s: string): string {
-  return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
-}
-
-export function renderEmail(def: FormDefinition, values: FormValues, reference: string) {
-  const rows = def.order.map((key) => {
-    const spec = def.fields[key];
-    const v = values[key];
-    const display = Array.isArray(v) ? v.map((x) => optionLabel(def, key, x)).join(", ") : v;
-    return { label: spec.label, value: display || "—" };
-  });
-  const heading = def.id === "contact" ? "Website enquiry" : "Quote request";
-  const text = `${heading} (reference ${reference})\n\n` + rows.map((r) => `${r.label}:\n${r.value}\n`).join("\n");
-  const html =
-    `<h1 style="font-family:Arial,sans-serif;font-size:18px">${heading}</h1>` +
-    `<p style="font-family:Arial,sans-serif;font-size:12px;color:#555">Reference ${escapeHtml(reference)}</p>` +
-    `<table cellpadding="6" style="font-family:Arial,sans-serif;font-size:14px;border-collapse:collapse">` +
-    rows
-      .map(
-        (r) =>
-          `<tr><th align="left" valign="top" style="border-bottom:1px solid #ddd;width:220px">${escapeHtml(r.label)}</th>` +
-          `<td style="border-bottom:1px solid #ddd;white-space:pre-wrap">${escapeHtml(r.value)}</td></tr>`,
-      )
-      .join("") +
-    `</table>`;
-  return { text, html };
 }
 
 function subjectFor(def: FormDefinition, values: FormValues): string {
@@ -184,7 +157,8 @@ export async function handleSubmission(req: Request, def: FormDefinition): Promi
 
   const reference = randomUUID().slice(0, 8).toUpperCase();
   const replyEmail = (form === "contact" ? values.email : values.managerEmail) as string;
-  const { text, html } = renderEmail(def, values, reference);
+  const site = (req.headers.get("x-forwarded-host") || req.headers.get("host") || "sinkingfund.com.au").split(",")[0].trim();
+  const { text, html, attachments } = renderEmail(def, values, reference, site);
   const result = await sendMail({
     form,
     reference,
@@ -193,6 +167,7 @@ export async function handleSubmission(req: Request, def: FormDefinition): Promi
     subject: subjectFor(def, values),
     text,
     html,
+    attachments,
   });
 
   if (!result.ok) {

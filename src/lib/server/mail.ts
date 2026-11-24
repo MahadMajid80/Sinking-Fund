@@ -27,6 +27,8 @@ export interface OutgoingMail {
   /** Opaque reference included in logs; contains no personal data. */
   reference: string;
   form: "contact" | "quote";
+  /** Inline images (e.g. the logo), base64, referenced from the HTML as cid:... */
+  attachments?: { filename: string; content: string; cid: string; contentType: string }[];
 }
 
 export type MailResult = { ok: true; transport: "smtp" | "mock"; messageId: string } | { ok: false; reason: "unconfigured" | "rejected" };
@@ -84,7 +86,7 @@ export async function sendMail(mail: OutgoingMail): Promise<MailResult> {
     const messageId = `mock-${mail.reference}`;
     await writeFile(
       path.join(dir, `${Date.now()}-${mail.form}-${mail.reference}.json`),
-      JSON.stringify({ transport: "mock", messageId, from: process.env.MAIL_FROM ?? "mock@localhost", ...mail }, null, 2),
+      JSON.stringify({ transport: "mock", messageId, from: process.env.MAIL_FROM ?? "mock@localhost", ...mail, attachments: (mail.attachments ?? []).map((a) => ({ filename: a.filename, cid: a.cid, bytes: Math.round((a.content.length * 3) / 4) })) }, null, 2),
     );
     return { ok: true, transport: "mock", messageId };
   }
@@ -112,6 +114,7 @@ export async function sendMail(mail: OutgoingMail): Promise<MailResult> {
       text: mail.text,
       html: mail.html,
       headers: { "X-Enquiry-Reference": mail.reference },
+      attachments: (mail.attachments ?? []).map((a) => ({ filename: a.filename, content: Buffer.from(a.content, "base64"), cid: a.cid, contentType: a.contentType, contentDisposition: "inline" as const })),
     });
     // Accepted only if the SMTP server accepted at least one recipient and rejected none.
     if (!info.accepted?.length || info.rejected?.length) {
