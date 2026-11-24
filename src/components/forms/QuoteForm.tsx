@@ -44,7 +44,7 @@ export function QuoteForm() {
 
   if (status === "success") {
     return (
-      <SuccessPanel heading="Quote request sent" successRef={successRef} reference={reference}>
+      <SuccessPanel heading="Quote Request Sent" successRef={successRef} reference={reference}>
         <p>Thank you. We’ve received your quote request and will reply using the preference you chose.</p>
         <p>
           If your request is urgent, call <a href={BRAND.phoneHref}>{BRAND.phoneDisplay}</a>.

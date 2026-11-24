@@ -1,6 +1,7 @@
 import { quoteForm } from "@/lib/forms/schema";
 import { handleSubmission } from "@/lib/server/submission";
 import { recaptchaSecretSet } from "@/lib/server/recaptcha";
+import { mailStatus } from "@/lib/server/mail";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -15,7 +16,7 @@ export function GET() {
     {
       ok: true,
       recaptchaSecretKeySet: recaptchaSecretSet(),
-      emailDelivery: process.env.MAIL_FROM && process.env.SMTP_HOST ? "smtp" : "not configured",
+      ...mailStatus(),
     },
     { headers: { "Cache-Control": "no-store" } },
   );

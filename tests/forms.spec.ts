@@ -67,7 +67,7 @@ test.describe("contact form", () => {
   test("the second step reviews the first and Change returns to it", async ({ page }) => {
     await page.goto("/contact-us/");
     await contactToStep2(page, "Review Person", "review@example.com");
-    const review = page.getByRole("region", { name: "Check your details" });
+    const review = page.getByRole("region", { name: "Check Your Details" });
     await expect(review).toContainText("Review Person");
     await expect(review).toContainText("review@example.com");
     await expect(review).toContainText("Not provided");
@@ -94,7 +94,7 @@ test.describe("contact form", () => {
     await page.getByLabel("Send info").check();
     await humanPause(page);
     await page.getByRole("button", { name: "Send message" }).click();
-    const heading = page.getByRole("heading", { name: "Message sent" });
+    const heading = page.getByRole("heading", { name: "Message Sent" });
     await expect(heading).toBeFocused();
     const ref = (await page.locator(".form-success__ref").textContent())!.replace("Reference: ", "").trim();
     const mails = await mailByReference(ref);
@@ -146,7 +146,7 @@ test.describe("contact form", () => {
     await page.getByLabel("Call back").check();
     await humanPause(page);
     await page.getByRole("button", { name: "Send message" }).dblclick();
-    await expect(page.getByRole("heading", { name: "Message sent" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Message Sent" })).toBeVisible();
     await page.waitForTimeout(500);
     const matches = (await readOutbox()).filter((m) => m.text.includes(`Double ${token}`));
     expect(matches).toHaveLength(1);
@@ -234,12 +234,12 @@ test.describe("quote form", () => {
     await mgr.getByLabel("Address (required)").fill("PO Box 1, Sydney NSW 2001");
     await page.getByLabel("Special Instructions").fill("Key with building manager");
     await page.getByRole("group", { name: "Preference" }).getByLabel("Email back").check();
-    const review = page.getByRole("region", { name: "Check your details" });
+    const review = page.getByRole("region", { name: "Check Your Details" });
     await expect(review).toContainText("WHS Report, Sinking Fund Plan");
     await expect(review).toContainText("0433 333 333");
     await humanPause(page);
     await page.getByRole("button", { name: "Send quote request" }).click();
-    await expect(page.getByRole("heading", { name: "Quote request sent" })).toBeFocused();
+    await expect(page.getByRole("heading", { name: "Quote Request Sent" })).toBeFocused();
     const ref = (await page.locator(".form-success__ref").textContent())!.replace("Reference: ", "").trim();
     const [m] = await mailByReference(ref);
     expect(m.to).toEqual(["quotes@example.test"]);

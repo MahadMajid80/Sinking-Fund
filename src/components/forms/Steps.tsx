@@ -115,7 +115,7 @@ export function StepReview({
   return (
     <section className="step-review" aria-labelledby={`${formId}-review-title`}>
       <h3 id={`${formId}-review-title`} className="step-review__title">
-        Check your details
+        Check Your Details
       </h3>
       {earlier.map((s, i) => (
         <div key={s.id} className="step-review__group">
