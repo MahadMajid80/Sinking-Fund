@@ -3037,3 +3037,16 @@ html[data-scrolled] .site-header__inner {
     transform-origin: left top;
   }
 }
+
+/* ---------- Comfortable tap areas on phones (WCAG 2.5.8: at least 24px) ---------- */
+.breadcrumbs a,
+.faq__related li a,
+.status-page__links li a {
+  display: inline-block;
+  min-height: 24px;
+  padding-block: 0.2rem;
+}
+.faq__related li + li,
+.status-page__links li + li {
+  margin-top: 0.35rem;
+}
