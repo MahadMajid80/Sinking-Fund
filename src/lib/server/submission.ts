@@ -13,6 +13,7 @@ import {
 } from "@/lib/forms/schema";
 import { recipientsFor, sendMail } from "./mail";
 import { checkRateLimit } from "./rate-limit";
+import { verifyRecaptcha } from "./recaptcha";
 
 /**
  * Shared POST handler for both forms.
@@ -22,7 +23,7 @@ import { checkRateLimit } from "./rate-limit";
  * to a status page. Personal values never appear in URLs or logs.
  */
 
-type Outcome = "sent" | "duplicate" | "invalid" | "rate_limited" | "delivery_failed" | "unconfigured" | "spam" | "too_large" | "bad_request";
+type Outcome = "sent" | "duplicate" | "invalid" | "rate_limited" | "delivery_failed" | "unconfigured" | "spam" | "too_large" | "bad_request" | "captcha_failed";
 
 const recent = new Map<string, { state: "pending" | "sent"; at: number }>();
 const DEDUPE_MS = 30 * 60 * 1000;
@@ -126,10 +127,19 @@ export async function handleSubmission(req: Request, def: FormDefinition): Promi
   }
   const { data, isForm } = parsed;
 
+  // reCAPTCHA ("I'm not a robot"), checked once RECAPTCHA_CHECKBOX_SECRET_KEY is set in the hosting environment.
+  const ip = clientIp(req);
+  const captcha = await verifyRecaptcha(data["g-recaptcha-response"], ip === "unknown" ? null : ip);
+  if (captcha === "rejected") {
+    log(form, "captcha_failed");
+    return respond(isForm, req, form, 403, { ok: false, code: "captcha_failed", message: "Tick “I’m not a robot”, then send again." });
+  }
+
   // Spam controls: honeypot and minimum fill time. Bots receive a neutral acknowledgement
   // and nothing is sent. Humans are never affected because the field is hidden from them.
+  // A verified reCAPTCHA overrides them, so a fast but genuine person is never dropped.
   const startedAt = Number(data.formStartedAt);
-  if ((typeof data[HONEYPOT_FIELD] === "string" && data[HONEYPOT_FIELD] !== "") || (Number.isFinite(startedAt) && Date.now() - startedAt < MIN_FILL_MS)) {
+  if (captcha !== "verified" && ((typeof data[HONEYPOT_FIELD] === "string" && data[HONEYPOT_FIELD] !== "") || (Number.isFinite(startedAt) && Date.now() - startedAt < MIN_FILL_MS))) {
     log(form, "spam");
     return respond(isForm, req, form, 200, { ok: true, reference: randomUUID().slice(0, 8) });
   }

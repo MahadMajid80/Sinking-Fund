@@ -12,6 +12,7 @@ import {
   type FormStep,
   type FormValues,
 } from "@/lib/forms/schema";
+import { recaptchaToken, resetRecaptcha } from "./Recaptcha";
 
 export type Status = "idle" | "pending" | "invalid" | "success" | "failed" | "rate_limited";
 
@@ -41,6 +42,9 @@ export function useEnquiryForm(def: FormDefinition, endpoint: string, steps: For
   const [reference, setReference] = useState("");
   const [step, setStep] = useState(0);
   const [review, setReview] = useState<FormValues>({});
+  /** reCAPTCHA widget on the last step (null until Google's script has drawn it). */
+  const captchaWidget = useRef<number | null>(null);
+  const [captchaError, setCaptchaError] = useState("");
   /** What to focus after the next render: bumped on every navigation or error. */
   const [focusRequest, setFocusRequest] = useState<{ target: "heading" | "summary"; n: number } | null>(null);
   const last = steps.length - 1;
@@ -82,6 +86,7 @@ export function useEnquiryForm(def: FormDefinition, endpoint: string, steps: For
     data[HONEYPOT_FIELD] = String(fd.get(HONEYPOT_FIELD) ?? "");
     data.formStartedAt = startedAt.current;
     data.submissionId = submissionId.current;
+    data["g-recaptcha-response"] = recaptchaToken(captchaWidget.current);
     return data;
   }
 
@@ -132,6 +137,12 @@ export function useEnquiryForm(def: FormDefinition, endpoint: string, steps: For
     const clientErrors = validate(def, normalise(def, data));
     const errorStep = firstStepWithError(steps, clientErrors);
     if (errorStep >= 0) return showStepErrors(errorStep, clientErrors);
+    if (captchaWidget.current !== null && !data["g-recaptcha-response"]) {
+      setCaptchaError("Tick “I’m not a robot” to send your details.");
+      document.getElementById(`${def.id}-captcha`)?.focus();
+      return;
+    }
+    setCaptchaError("");
     setErrors({});
     setMessage("");
     setStatus("pending");
@@ -146,6 +157,13 @@ export function useEnquiryForm(def: FormDefinition, endpoint: string, steps: For
         setReference(body.reference ?? "");
         setStatus("success");
         submissionId.current = newId();
+        return;
+      }
+      if (res.status === 403 && body.code === "captcha_failed") {
+        resetRecaptcha(captchaWidget.current);
+        setStatus("idle");
+        setCaptchaError(body.message ?? "Tick “I’m not a robot” again, then send.");
+        document.getElementById(`${def.id}-captcha`)?.focus();
         return;
       }
       if (res.status === 400 && body.errors) {
@@ -171,5 +189,7 @@ export function useEnquiryForm(def: FormDefinition, endpoint: string, steps: For
     headingRefs.current[index] = el;
   };
 
-  return { formRef, summaryRef, successRef, status, errors, message, reference, onSubmit, onKeyDown, step, last, next, back, goTo, review, headingRef };
+  const clearCaptchaError = () => setCaptchaError("");
+
+  return { formRef, summaryRef, successRef, status, errors, message, reference, onSubmit, onKeyDown, step, last, next, back, goTo, review, headingRef, captchaWidget, captchaError, clearCaptchaError };
 }

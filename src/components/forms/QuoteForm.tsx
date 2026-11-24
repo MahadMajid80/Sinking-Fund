@@ -4,6 +4,7 @@ import { useState, useSyncExternalStore } from "react";
 import { LIMITS, QUOTE_PREFERENCES, SERVICE_OPTIONS, quoteForm, quoteSteps, type ServiceValue } from "@/lib/forms/schema";
 import { BRAND } from "@/lib/site";
 import { CheckboxGroup, ErrorSummary, Honeypot, SubmitRow, SuccessPanel, TextField } from "./Fields";
+import { Recaptcha } from "./Recaptcha";
 import { NoScriptSteps, StepNav, StepPanel, StepReview, Stepper } from "./Steps";
 import { useEnquiryForm } from "./useEnquiryForm";
 
@@ -29,7 +30,7 @@ const noopSubscribe = () => () => {};
 const allowed = new Set<string>(SERVICE_OPTIONS.map((o) => o.value));
 
 export function QuoteForm() {
-  const { formRef, summaryRef, successRef, status, errors: e, message, reference, onSubmit, onKeyDown, step, last, next, back, goTo, review, headingRef } =
+  const { formRef, summaryRef, successRef, status, errors: e, message, reference, onSubmit, onKeyDown, step, last, next, back, goTo, review, headingRef, captchaWidget, captchaError, clearCaptchaError } =
     useEnquiryForm(quoteForm, "/api/quote/", quoteSteps);
   const steps = quoteSteps;
   // Preselect a service from ?service= (validated against the allow-list). Read on the client
@@ -116,6 +117,7 @@ export function QuoteForm() {
         <CheckboxGroup id={ids.replyPreference} name="replyPreference" legend="Preference" hint="How would you like us to reply?" options={QUOTE_PREFERENCES} error={e.replyPreference} />
         {step === last ? <StepReview formId="quote" def={quoteForm} steps={steps} values={review} onEdit={goTo} /> : null}
         <Honeypot />
+        {step === last ? <Recaptcha id="quote-captcha" widgetRef={captchaWidget} error={captchaError} onChange={clearCaptchaError} /> : null}
         <div className="step-nav step-nav--final">
           <button type="button" className="button button--quiet step-nav__back" onClick={back}>
             Back

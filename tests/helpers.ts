@@ -34,9 +34,10 @@ export function fieldsFromText(text: string): Record<string, string> {
   const blocks = text.split("\n\n").slice(1);
   for (const b of blocks) {
     const [label, ...rest] = b.split("\n");
-    if (label?.endsWith(":")) out[label.slice(0, -1)] = rest.join("\n").trim();
+    if (label?.endsWith(":")) out[label.slice(0, -1).toLowerCase()] = rest.join("\n").trim();
   }
-  return out;
+  // Labels are looked up without regard to capitalisation (field labels are Title Case on the site).
+  return new Proxy(out, { get: (o, k) => (typeof k === "string" ? o[k.toLowerCase()] : undefined) });
 }
 
 let ipCounter = Math.floor(Math.random() * 200);

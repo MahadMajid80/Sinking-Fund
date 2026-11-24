@@ -3015,3 +3015,25 @@ html[data-scrolled] .site-header__inner {
     translate: none;
   }
 }
+
+/* reCAPTCHA checkbox on the last step of the enquiry forms */
+.form-captcha {
+  margin-top: 1.5rem;
+  min-height: 78px;
+  outline: none;
+}
+.form-captcha:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+.form-captcha__error {
+  margin-top: 0.5rem;
+}
+@media (max-width: 340px) {
+  /* Google's widget is 304px wide: scale it down on the narrowest phones so it never overflows */
+  .form-captcha > div {
+    transform: scale(0.88);
+    transform-origin: left top;
+  }
+}

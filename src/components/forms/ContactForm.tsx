@@ -3,6 +3,7 @@
 import { CONTACT_PREFERENCES, LIMITS, SERVICE_OPTIONS, contactForm, contactSteps } from "@/lib/forms/schema";
 import { BRAND } from "@/lib/site";
 import { CheckboxGroup, ErrorSummary, Honeypot, SubmitRow, SuccessPanel, TextField } from "./Fields";
+import { Recaptcha } from "./Recaptcha";
 import { NoScriptSteps, StepNav, StepPanel, StepReview, Stepper } from "./Steps";
 import { useEnquiryForm } from "./useEnquiryForm";
 
@@ -17,7 +18,7 @@ const ids: Record<string, string> = {
 };
 
 export function ContactForm() {
-  const { formRef, summaryRef, successRef, status, errors: e, message, reference, onSubmit, onKeyDown, step, last, next, back, goTo, review, headingRef } =
+  const { formRef, summaryRef, successRef, status, errors: e, message, reference, onSubmit, onKeyDown, step, last, next, back, goTo, review, headingRef, captchaWidget, captchaError, clearCaptchaError } =
     useEnquiryForm(contactForm, "/api/contact/", contactSteps);
   const steps = contactSteps;
 
@@ -74,6 +75,7 @@ export function ContactForm() {
         />
         {step === last ? <StepReview formId="contact" def={contactForm} steps={steps} values={review} onEdit={goTo} /> : null}
         <Honeypot />
+        {step === last ? <Recaptcha id="contact-captcha" widgetRef={captchaWidget} error={captchaError} onChange={clearCaptchaError} /> : null}
         <div className="step-nav step-nav--final">
           <button type="button" className="button button--quiet step-nav__back" onClick={back}>
             Back

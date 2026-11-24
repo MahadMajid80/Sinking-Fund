@@ -4,13 +4,14 @@ import { BRAND, routes } from "@/lib/site";
 import { PageHeader } from "@/components/PageParts";
 
 // Shown only after a form submitted without JavaScript could not be accepted.
-export const metadata: Metadata = { title: { absolute: "Message not sent | Sinking Fund" }, robots: { index: false, follow: false } };
+export const metadata: Metadata = { title: { absolute: "Message Not Sent | Sinking Fund" }, robots: { index: false, follow: false } };
 
 const reasons: Record<string, string> = {
   invalid: "Some required details were missing or in the wrong format.",
   rate_limited: "Too many messages have been sent from this connection. Wait a few minutes before trying again.",
   delivery_failed: "Our email service didn’t accept the message.",
   unconfigured: "Online enquiries are not available at the moment.",
+  captcha_failed: "The “I’m not a robot” check needs JavaScript turned on. Turn it on and try again, or call us.",
 };
 
 export default async function ErrorPage({ searchParams }: PageProps<"/enquiry/error">) {

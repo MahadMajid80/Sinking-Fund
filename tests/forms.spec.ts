@@ -19,8 +19,8 @@ test.describe("contact form", () => {
   test("is split into two steps with a progress bar", async ({ page }) => {
     await page.goto("/contact-us/");
     const stepper = page.getByRole("navigation", { name: "Form progress" });
-    await expect(stepper.locator("li")).toHaveText([/About you/, /Your enquiry/]);
-    await expect(stepper.locator('[aria-current="step"]')).toContainText("About you");
+    await expect(stepper.locator("li")).toHaveText([/About You/, /Your Enquiry/]);
+    await expect(stepper.locator('[aria-current="step"]')).toContainText("About You");
     await expect(activeStep(page)).toHaveAttribute("data-step", "about");
     await expect(page.getByLabel("Your message")).toBeHidden();
     const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"]).analyze();
@@ -55,10 +55,10 @@ test.describe("contact form", () => {
     await page.getByLabel("Your name (required)").fill("Keyboard User");
     await page.getByLabel("Your email (required)").fill("keys@example.com");
     await page.keyboard.press("Enter");
-    await expect(page.getByRole("heading", { name: "Your enquiry" })).toBeFocused();
+    await expect(page.getByRole("heading", { name: "Your Enquiry" })).toBeFocused();
     await page.getByLabel("Subject").fill("Keep me");
     await activeStep(page).getByRole("button", { name: "Back" }).click();
-    await expect(page.getByRole("heading", { name: "About you" })).toBeFocused();
+    await expect(page.getByRole("heading", { name: "About You" })).toBeFocused();
     await expect(page.getByLabel("Your name (required)")).toHaveValue("Keyboard User");
     await next(page);
     await expect(page.getByLabel("Subject")).toHaveValue("Keep me");
@@ -75,7 +75,7 @@ test.describe("contact form", () => {
     await expect(activeStep(page)).toHaveAttribute("data-step", "about");
     // Completed steps in the progress bar are buttons too.
     await next(page);
-    await page.getByRole("navigation", { name: "Form progress" }).getByRole("button", { name: /About you/ }).click();
+    await page.getByRole("navigation", { name: "Form progress" }).getByRole("button", { name: /About You/ }).click();
     await expect(activeStep(page)).toHaveAttribute("data-step", "about");
   });
 
@@ -108,7 +108,7 @@ test.describe("contact form", () => {
     expect(f["Your name"]).toBe(`Jane Citizen ${token}`);
     expect(f["Your email"]).toBe("jane@example.com");
     expect(f["Your phone number"]).toBe("02 9114 9800");
-    expect(f["Preference"]).toBe("Call back, Send info");
+    expect(f["Preference"]).toBe("Call Back, Send Info");
     expect(f["Is your query regarding any of the following?"]).toBe("Asbestos Report, OHS Report (VIC)");
     expect(f["Your message"]).toBe("Line one\nLine two");
     // Personal values never appear in the URL.
@@ -190,7 +190,7 @@ test.describe("quote form", () => {
 
   test("has two steps, starts empty and validates each step", async ({ page }) => {
     await page.goto("/quote-request/");
-    await expect(page.getByRole("navigation", { name: "Form progress" }).locator("li")).toHaveText([/Property and site access/, /Strata manager/]);
+    await expect(page.getByRole("navigation", { name: "Form progress" }).locator("li")).toHaveText([/Property and Site Access/, /Strata Manager/]);
     for (const id of ["quote-strata-plan", "quote-lots", "quote-site-address"]) await expect(page.locator(`#${id}`)).toHaveValue("");
     await next(page);
     const summary = page.locator(".form-alert");
@@ -251,8 +251,8 @@ test.describe("quote form", () => {
     expect(f["Strata manager phone number"]).toBe("02 1111 1111");
     expect(f["Site contact phone number"]).toBe("02 2222 2222");
     expect(f["Site contact mobile number"]).toBe("0433 333 333");
-    expect(f["Preference"]).toBe("Email back");
-    expect(m.html).toContain("<th align=\"left\" valign=\"top\" style=\"border-bottom:1px solid #ddd;width:220px\">Site contact mobile number</th><td style=\"border-bottom:1px solid #ddd;white-space:pre-wrap\">0433 333 333</td>");
+    expect(f["Preference"]).toBe("Email Back");
+    expect(m.html).toContain("<th align=\"left\" valign=\"top\" style=\"border-bottom:1px solid #ddd;width:220px\">Site Contact Mobile Number</th><td style=\"border-bottom:1px solid #ddd;white-space:pre-wrap\">0433 333 333</td>");
   });
 
   test("a server-side error on the first step returns there", async ({ page }) => {
@@ -334,8 +334,12 @@ test.describe("API protections", () => {
       headers,
     });
     expect((await unknownOption.json()).errors.services).toBeTruthy();
+    // GET is a status check: yes/no values only, never a key.
     const get = await request.get("/api/contact/");
-    expect(get.status()).toBe(405);
+    expect(get.status()).toBe(200);
+    const status = await get.json();
+    expect(typeof status.recaptchaSecretKeySet).toBe("boolean");
+    expect(JSON.stringify(status)).not.toMatch(/secret"\s*:\s*"|6L/);
   });
 
   test("no-JavaScript form posts redirect to a status page without personal data in the URL", async ({ request }) => {
