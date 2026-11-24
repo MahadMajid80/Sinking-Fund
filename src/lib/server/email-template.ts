@@ -103,7 +103,7 @@ function display(def: FormDefinition, values: FormValues, key: string): string {
   return (v ?? "").trim();
 }
 
-export function renderEmail(def: FormDefinition, values: FormValues, reference: string, site = "sinkingfund.com.au") {
+export function renderEmail(def: FormDefinition, values: FormValues, reference: string, site = "sinkingfundplan.com.au") {
   const form = def.id === "contact" ? "contact" : "quote";
   const L = LAYOUT[form];
   const val = (key: string) => (def.fields[key] ? display(def, values, key) : "");

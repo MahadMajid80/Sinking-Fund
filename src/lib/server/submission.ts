@@ -157,7 +157,7 @@ export async function handleSubmission(req: Request, def: FormDefinition): Promi
 
   const reference = randomUUID().slice(0, 8).toUpperCase();
   const replyEmail = (form === "contact" ? values.email : values.managerEmail) as string;
-  const site = (req.headers.get("x-forwarded-host") || req.headers.get("host") || "sinkingfund.com.au").split(",")[0].trim();
+  const site = (req.headers.get("x-forwarded-host") || req.headers.get("host") || "sinkingfundplan.com.au").split(",")[0].trim();
   const { text, html, attachments } = renderEmail(def, values, reference, site);
   const result = await sendMail({
     form,

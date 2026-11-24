@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
-// Same rule as SITE_INDEXABLE in src/lib/site.ts: on, or automatic once sinkingfund.com.au is the Vercel production domain.
-const onRealDomain = /(^|\.)sinkingfund\.com\.au$/.test((process.env.VERCEL_PROJECT_PRODUCTION_URL || "").toLowerCase());
+// Same rule as SITE_INDEXABLE in src/lib/site.ts: on, or automatic once sinkingfundplan.com.au is the Vercel production domain.
+const onRealDomain = /(^|\.)sinkingfund(plan)?\.com\.au$/.test((process.env.VERCEL_PROJECT_PRODUCTION_URL || "").toLowerCase());
 const indexable =
   process.env.SITE_INDEXABLE === "true" ||
   (process.env.SITE_INDEXABLE !== "false" && process.env.VERCEL_ENV === "production" && onRealDomain);

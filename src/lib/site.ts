@@ -7,15 +7,15 @@
 
 /** Vercel's production domain for this project (set automatically at build time on Vercel). */
 const PRODUCTION_HOST = (process.env.VERCEL_PROJECT_PRODUCTION_URL || "").toLowerCase();
-/** True once sinkingfund.com.au is connected as the project's production domain in Vercel. */
-const ON_REAL_DOMAIN = /(^|\.)sinkingfund\.com\.au$/.test(PRODUCTION_HOST);
+/** True once sinkingfundplan.com.au is connected as the project's production domain in Vercel. */
+const ON_REAL_DOMAIN = /(^|\.)sinkingfund(plan)?\.com\.au$/.test(PRODUCTION_HOST);
 
 /** Canonical origin (no trailing slash). Override with SITE_URL at build time. */
-export const SITE_URL = (process.env.SITE_URL || "https://www.sinkingfund.com.au").replace(/\/+$/, "");
+export const SITE_URL = (process.env.SITE_URL || "https://sinkingfundplan.com.au").replace(/\/+$/, "");
 
 /**
  * Pages are indexable when SITE_INDEXABLE=true is set, or automatically on the Vercel production build once
- * sinkingfund.com.au is the project's production domain (SITE_INDEXABLE=false turns this off).
+ * sinkingfundplan.com.au is the project's production domain (SITE_INDEXABLE=false turns this off).
  * Everything else (local, previews, *.vercel.app) is noindex, nofollow and disallowed in robots.txt.
  */
 export const SITE_INDEXABLE =
